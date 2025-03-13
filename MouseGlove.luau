@@ -22,7 +22,7 @@ if teleport then
 if not game.IsLoaded then
 game.Loaded:Wait()
 end
-loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/AutoGetMouse/refs/heads/main/OpenSource.lua'))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/OpenSourceScripts/refs/heads/main/MouseGlove.luau'))()
 	]])
 else
 game:GetService("StarterGui"):SetCore("SendNotification",{
