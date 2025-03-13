@@ -5,10 +5,10 @@ end
 
 
 function Checkamogus()
-GetAvatar = false
-repeat task.wait() until GetAvatar ~= nil
+DontGetAvatar = true
+repeat task.wait() until DontGetAvatar ~= nil
 
-if GetAvatar == true then
+if DontGetAvatar == true then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3258, -65, 824)
 if not game.IsLoaded then
 game.Loaded:Wait()
