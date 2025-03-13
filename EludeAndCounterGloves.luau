@@ -10,10 +10,10 @@ game:GetService("StarterGui"):SetCore("SendNotification",{
 	Duration = 36000
 })
 
-if getgenv().AutoGetEludeExecuted == true then return end
+if getgenv().AutoGetEludeAndCounterExecuted == true then return end
 
 if getgenv or getgenv() then
-getgenv().AutoGetEludeExecuted = true
+getgenv().AutoGetEludeAndCounterExecuted = true
 end
 
 local teleport = queueonteleport or queue_on_teleport -- just look at function name bro
@@ -22,7 +22,7 @@ if teleport then
 if not game.IsLoaded then
 game.Loaded:Wait()
 end
-loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/OpenSourceScripts/refs/heads/main/EludeGlove.luau'))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/OpenSourceScripts/refs/heads/main/EludeAndCounterGloves.luau'))()
 	]])
 else
 game:GetService("StarterGui"):SetCore("SendNotification",{
