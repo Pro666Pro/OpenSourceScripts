@@ -41,6 +41,11 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/OpenSourceS
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/OpenSourceScripts/refs/heads/main/CounterGlove.luau'))()
 ```
 
+## Auto Get Untitled Tag Glove
+```lua
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/OpenSourceScripts/refs/heads/main/UTGGlove.luau'))()
+```
+
 ## Auto Get Elude & Counter
 ```lua
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/OpenSourceScripts/refs/heads/main/EludeAndCounterGloves.luau'))()
