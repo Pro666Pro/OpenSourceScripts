@@ -2,6 +2,7 @@
 
 Copy scripts:
 
+## Auto Get Mouse
 ```lua
 ss
 ```
