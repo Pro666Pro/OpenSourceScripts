@@ -50,9 +50,9 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/OpenSourceS
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/OpenSourceScripts/refs/heads/main/Gloves/UTGGlove.luau'))()
 ```
 
-## Auto Get Boxer
+## Auto Get Bind
 ```lua
-loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/OpenSourceScripts/refs/heads/main/Gloves/BoxerGlove.luau'))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/OpenSourceScripts/refs/heads/main/Gloves/BindGlove.luau'))()
 ```
 
 ## Auto Get Boxer
