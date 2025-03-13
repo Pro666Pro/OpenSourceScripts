@@ -45,3 +45,8 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/OpenSourceS
 ```lua
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/OpenSourceScripts/refs/heads/main/EludeAndCounterGloves.luau'))()
 ```
+
+## Auto Get Fan & Boxer
+```lua
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/OpenSourceScripts/refs/heads/main/FanAndBoxerGloves.luau'))()
+```
