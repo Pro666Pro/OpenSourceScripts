@@ -36,10 +36,10 @@ game:GetService("StarterGui"):SetCore("SendNotification",{
 	Duration = 36000
 })
 
-if getgenv().AutoGetBoxerExecuted == true then return end
+if getgenv().AutoGetReludeExecuted == true then return end
 
 if getgenv or getgenv() then
-getgenv().AutoGetBoxerExecuted = true
+getgenv().AutoGetReludeExecuted = true
 end
 
 local teleport = queueonteleport or queue_on_teleport -- just look at function name bro
