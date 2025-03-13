@@ -52,8 +52,7 @@ Instance.new("Message",workspace).Text = "Time left to receive: "..Time
 wait(1)
 workspace:FindFirstChildWhichIsA("Message"):Destroy()
 end
-game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
-wait(1.3)
+wait(1.5)
 if firetouchinterest or firetouchinterest() then
 firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, game.Workspace.Ruins.Elude.Glove, 0)
 firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, game.Workspace.Ruins.Elude.Glove, 1)
