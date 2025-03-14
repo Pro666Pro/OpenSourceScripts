@@ -38,19 +38,16 @@ if game.PlaceId == 7234087065 then
 
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.QuestStuff.Key.CFrame
 task.wait(.8)
-remotes = {
-    [1] = game:GetService("ReplicatedStorage").RemoteEvents.SuitUpClown
-    [2] = game:GetService("ReplicatedStorage").RemoteEvents.KeyQuest
-    [3] = game:GetService("ReplicatedStorage").RemoteEvents.KeyAcquired
-    [4] = game:GetService("ReplicatedStorage").RemoteEvents.GOHOME
-    [5] = game:GetService("ReplicatedStorage").RemoteEvents.KeyBadgeReward
-}
-repeat task.wait until remotes ~= nil
-for i,v in ipairs(remotes) do
-v:FireServer()
+game:GetService("ReplicatedStorage").RemoteEvents.SuitUpClown:FireServer()
 task.wait(.1)
-end
-task.wait(.8)
+game:GetService("ReplicatedStorage").RemoteEvents.KeyQuest:FireServer()
+task.wait(.1)
+game:GetService("ReplicatedStorage").RemoteEvents.KeyAcquired:FireServer()
+task.wait(.1)
+game:GetService("ReplicatedStorage").RemoteEvents.GOHOME:FireServer()
+task.wait(.1)
+game:GetService("ReplicatedStorage").RemoteEvents.KeyBadgeReward:FireServer()
+task.wait(.9)
 if workspace:FindFirstChild("BoxingGloves") == nil then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Buildings.house.TP.CFrame * CFrame.new(0,10,0)
 repeat task.wait(.1) until workspace:FindFirstChild("BoxingGloves")
