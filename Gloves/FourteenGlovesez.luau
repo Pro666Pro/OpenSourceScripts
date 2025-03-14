@@ -71,7 +71,7 @@ if teleport then
 if not game.IsLoaded then
 game.Loaded:Wait()
 end
-loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/OpenSourceScripts/refs/heads/main/Gloves/FourteenGloves(ez).luau'))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/OpenSourceScripts/refs/heads/main/Gloves/FourteenGlovesez.luau'))()
 	]])
 else
 game:GetService("StarterGui"):SetCore("SendNotification",{
@@ -273,18 +273,16 @@ while task.wait() do Teleport() end
 else
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.QuestStuff.Key.CFrame
 task.wait(.8)
-remotes = {
-    [1] = game:GetService("ReplicatedStorage").RemoteEvents.SuitUpClown
-    [2] = game:GetService("ReplicatedStorage").RemoteEvents.KeyQuest
-    [3] = game:GetService("ReplicatedStorage").RemoteEvents.KeyAcquired
-    [4] = game:GetService("ReplicatedStorage").RemoteEvents.GOHOME
-    [5] = game:GetService("ReplicatedStorage").RemoteEvents.KeyBadgeReward
-}
-repeat task.wait until remotes ~= nil
-for i,v in ipairs(remotes) do
-v:FireServer()
+game:GetService("ReplicatedStorage").RemoteEvents.SuitUpClown:FireServer()
 task.wait(.1)
-end
+game:GetService("ReplicatedStorage").RemoteEvents.KeyQuest:FireServer()
+task.wait(.1)
+game:GetService("ReplicatedStorage").RemoteEvents.KeyAcquired:FireServer()
+task.wait(.1)
+game:GetService("ReplicatedStorage").RemoteEvents.GOHOME:FireServer()
+task.wait(.1)
+game:GetService("ReplicatedStorage").RemoteEvents.KeyBadgeReward:FireServer()
+task.wait(.1)
 task.wait(.8)
 if workspace:FindFirstChild("BoxingGloves") == nil then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Buildings.house.TP.CFrame * CFrame.new(0,10,0)
