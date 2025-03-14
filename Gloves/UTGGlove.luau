@@ -36,11 +36,11 @@ end
 
 if game.PlaceId == 115782629143468 then
 
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0, 200, 0)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0, 300, 0)
 
 elseif game.PlaceId == 7234087065 then
 
-fireclickdetector(workspace.Signs.Sign.Text.ClickDetector)
+while task.wait() do game:GetService("TeleportService"):Teleport(115782629143468) end
   
 elseif game.PlaceId == 11520107397 or game.PlaceId == 9015014224 or game.PlaceId == 6403373529 or game.PlaceId == 124596094333302 then
   
