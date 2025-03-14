@@ -2,6 +2,12 @@ if not game.IsLoaded then
 game.Loaded:Wait()
 end
 
+if getgenv().ExecutedArleadyLol == true then return end
+
+if getgenv or getgenv() then
+getgenv().ExecutedArleadyLol = true
+end
+
 function Checkamogus()
 DontGetAvatar = false
 repeat task.wait() until DontGetAvatar ~= nil
@@ -71,7 +77,7 @@ if teleport then
 if not game.IsLoaded then
 game.Loaded:Wait()
 end
-loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/OpenSourceScripts/refs/heads/main/Gloves/FourteenGlovesez.luau'))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/OpenSourceScripts/refs/heads/main/Gloves/FourteenGloves(Lol).luau'))()
 	]])
 else
 game:GetService("StarterGui"):SetCore("SendNotification",{
@@ -415,6 +421,7 @@ if v.Name == "NewQuestButton" and v:FindFirstChild("Button") and v.Button:FindFi
 v.Name = "skibidi"
 end
 end
+repeat task.wait(.1) until game.Players.LocalPlayer.PlayerGui.QuestHunterComponent.QuestHunter.Element.Main.Main.Page.QuestsPage:FindFirstChild("skibidi")
 ClickButton(game.Players.LocalPlayer.PlayerGui.QuestHunterComponent.QuestHunter.Element.Main.Main.Page.QuestsPage.skibidi.Button)
 ClickButton(game.Players.LocalPlayer.PlayerGui.QuestHunterComponent.QuestHunter.Element.Main.Main.Page.QuestInfoPage.AcceptQuest, UDim2.new(10000, 0, -10000, 0))
 workspace.BountyHunterRoom.BountyHunterBooth._configPart.LeaveRemote:FireServer()
