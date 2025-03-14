@@ -38,18 +38,16 @@ if game.PlaceId == 7234087065 then
 
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.QuestStuff.Key.CFrame
 task.wait(.8)
-remotes = {
-    [1] = game:GetService("ReplicatedStorage").RemoteEvents.SuitUpClown
-    [2] = game:GetService("ReplicatedStorage").RemoteEvents.KeyQuest
-    [3] = game:GetService("ReplicatedStorage").RemoteEvents.KeyAcquired
-    [4] = game:GetService("ReplicatedStorage").RemoteEvents.GOHOME
-    [5] = game:GetService("ReplicatedStorage").RemoteEvents.KeyBadgeReward
-}
-repeat task.wait until remotes ~= nil
-for i,v in ipairs(remotes) do
-v:FireServer()
+game:GetService("ReplicatedStorage").RemoteEvents.SuitUpClown:FireServer()
 task.wait(.1)
-end
+game:GetService("ReplicatedStorage").RemoteEvents.KeyQuest:FireServer()
+task.wait(.1)
+game:GetService("ReplicatedStorage").RemoteEvents.KeyAcquired:FireServer()
+task.wait(.1)
+game:GetService("ReplicatedStorage").RemoteEvents.GOHOME:FireServer()
+task.wait(.1)
+game:GetService("ReplicatedStorage").RemoteEvents.KeyBadgeReward:FireServer()
+task.wait(.9)
   
 elseif game.PlaceId == 11520107397 or game.PlaceId == 9015014224 or game.PlaceId == 6403373529 or game.PlaceId == 124596094333302 then
   
