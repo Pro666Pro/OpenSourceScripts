@@ -71,7 +71,7 @@ if teleport then
 if not game.IsLoaded then
 game.Loaded:Wait()
 end
-loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/OpenSourceScripts/refs/heads/main/Gloves/AdminGlove.luau'))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/OpenSourceScripts/refs/heads/main/Gloves/FourteenGloves(ez).luau'))()
 	]])
 else
 game:GetService("StarterGui"):SetCore("SendNotification",{
