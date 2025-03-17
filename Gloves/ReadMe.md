@@ -149,3 +149,18 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/OpenSourceS
 ```lua
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/OpenSourceScripts/refs/heads/main/Gloves/HitmanGlove.luau'))()
 ```
+
+## Auto Get RNG
+```lua
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/OpenSourceScripts/refs/heads/main/Gloves/RNGGlove.luau'))()
+```
+
+## Auto Get Buddies
+```lua
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/OpenSourceScripts/refs/heads/main/Gloves/BuddiesGlove.luau'))()
+```
+
+## Auto Get Angler
+```lua
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/OpenSourceScripts/refs/heads/main/Gloves/AnglerGlove.luau'))()
+```
