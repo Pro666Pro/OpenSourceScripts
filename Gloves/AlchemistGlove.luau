@@ -5,6 +5,27 @@ if not game.IsLoaded then
 game.Loaded:Wait()
 end
 
+
+if workspace:FindFirstChild("Baseplate") == nil then
+
+local S = Instance.new("Part")
+
+S.Name = "Baseplate"
+
+S.Anchored = true
+
+S.CanCollide = true
+
+S.Transparency = 0
+
+S.Position = Vector3.new(-10000, -10000, -10000)
+
+S.Size = Vector3.new(1000, 10, 1000)
+
+S.Parent = workspace
+
+end
+
 function EquipGlove(glove, time)
     glove = glove or "Default"
     time = time or 0.4
