@@ -60,6 +60,7 @@ game.ReplicatedStorage.Ghostinvisibilityactivated:FireServer()
 task.wait(.2)
 EquipGlove("Golden")
 EnterPortal("Teleport1")
+game:GetService("ReplicatedStorage").Goldify:FireServer(true)
 end
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") and game.Players.LocalPlayer.leaderstats.Glove.Value == "Golden" then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,10,0)
