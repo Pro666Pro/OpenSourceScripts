@@ -134,3 +134,18 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/OpenSourceS
 ```lua
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/OpenSourceScripts/refs/heads/main/Gloves/GlovelGlove.luau'))()
 ```
+
+## Auto Get Knockoff
+```lua
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/OpenSourceScripts/refs/heads/main/Gloves/KnockoffGlove.luau'))()
+```
+
+## Auto Get Alchemist
+```lua
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/OpenSourceScripts/refs/heads/main/Gloves/AlchemistGlove.luau'))()
+```
+
+## Auto Get Hitman
+```lua
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/OpenSourceScripts/refs/heads/main/Gloves/HitmanGlove.luau'))()
+```
