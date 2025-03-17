@@ -76,8 +76,8 @@ game.Players.LocalPlayer.Backpack:FindFirstChildWhichIsA("Tool").Parent = game.P
 end
 task.wait(.4)
 repeat task.wait() until game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Tool").Glove.Transparency == 0
-until v and v.Character and v.Character:FindFirstChildWhichIsA("Humanoid") and v.Character.Humanoid.Health == 0
 end
+until v and v.Character and v.Character:FindFirstChildWhichIsA("Humanoid") and v.Character.Humanoid.Health == 0
 end
 end
 until game:GetService("BadgeService"):UserHasBadgeAsync(game.Players.LocalPlayer.UserId, 2148934270)
