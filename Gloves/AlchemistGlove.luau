@@ -66,6 +66,13 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character:FindFir
 task.wait(0.6)
 game.ReplicatedStorage.PlagueHit:FireServer(v.Character:WaitForChild("HumanoidRootPart"),true)
 task.wait(0.2)
+if game.Players.LocalPlayer.Character.Ragdolled.Value == true then
+game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
+repeat
+task.wait()
+until game.Players.LocalPlayer.Character.Ragdolled.Value == false
+game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
+end
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace["Baseplate"].CFrame * CFrame.new(0,15,0)
 Instance.new("Message",game.CoreGui).Text = "Waiting for player to die..."
 repeat task.wait() until v and v.Character and v.Character:FindFirstChildWhichIsA("Humanoid") and v.Character.Humanoid.Health == 0
