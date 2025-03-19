@@ -1,5 +1,5 @@
 Aura = 7
-AuraColor = Color3.fromRGB(149, 0, 255) -- здесь цвет менять
+AuraColor = Color3.fromRGB(149, 0, 255)
 LightEmis = 0.3
 PartThatShouldGetEffectfromnexerscripts = game.Players.LocalPlayer.Character.HumanoidRootPart
 if Aura == 1 then
