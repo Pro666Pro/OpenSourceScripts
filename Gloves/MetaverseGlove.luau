@@ -25,6 +25,7 @@ game:GetService("StarterGui"):SetCore("SendNotification",{
 })
 
 
+
 if game.PlaceId == 136005148166028 then
 
 local Platform = (game.UserInputService.TouchEnabled and not game.UserInputService.MouseEnabled) and "Mobile" or "PC"
