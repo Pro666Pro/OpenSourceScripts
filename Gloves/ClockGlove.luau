@@ -44,7 +44,7 @@ while task.wait() do game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame 
 
 elseif game.PlaceId == 7234087065 then
 
-while task.wait() do game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace["wizard twoer"].Cone.CFrame * CFrame.new(0,10,0) end
+while task.wait() do game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(249.473419, 157.87326, -458.792145, 0.707134247, -0, -0.707079291, 0, 1, -0, 0.707079291, 0, 0.707134247)
   
 elseif game.PlaceId == 11520107397 or game.PlaceId == 9015014224 or game.PlaceId == 6403373529 or game.PlaceId == 124596094333302 then
   
