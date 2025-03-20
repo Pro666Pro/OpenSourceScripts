@@ -57,6 +57,15 @@ function EnterPortal(portal, time)
     end
 end
 
+game:GetService("StarterGui"):SetCore("SendNotification",{
+	Title = "Message from Nexer1234_AnotherAlt",
+	Text = "Please re-execute script after teleporting",
+    Icon = "rbxassetid://125704683916878",
+	Duration = 36000,
+	Button1 = "Oh..."
+})
+
+
 -- Credits, message is not squished up cuz it looks bad
 game:GetService("StarterGui"):SetCore("SendNotification",{
 	Title = "Credits to Nexer1234_AnotherAlt",
