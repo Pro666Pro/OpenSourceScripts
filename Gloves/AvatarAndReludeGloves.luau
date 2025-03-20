@@ -42,23 +42,14 @@ if getgenv or getgenv() then
 getgenv().AutoGetAvatarAndReludeExecuted = true
 end
 
-local teleport = queueonteleport or queue_on_teleport -- just look at function name bro
-if teleport then
-    teleport([[
-if not game.IsLoaded then
-game.Loaded:Wait()
-end
-loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/OpenSourceScripts/refs/heads/main/Gloves/AvatarAndReludeGloves.luau'))()
-	]])
-else
 game:GetService("StarterGui"):SetCore("SendNotification",{
 	Title = "Message from Nexer1234_AnotherAlt",
-	Text = "Your executor doesn't support queueonteleport/queue_on_teleport, please re-execute script after teleporting",
+	Text = "Please re-execute script after teleporting",
     Icon = "rbxassetid://125704683916878",
 	Duration = 36000,
 	Button1 = "Oh..."
 })
-end
+
 
 if game.PlaceId == 18550498098 then
 
