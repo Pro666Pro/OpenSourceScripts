@@ -41,11 +41,12 @@ game:GetService("StarterGui"):SetCore("SendNotification",{
 
 if game.PlaceId == 117232463555132 then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Map.Components.NPCs.FinalBoss.FinalBoss.Head.CFrame * CFrame.new(0,10,0)
-task.wait(1)
+task.wait(3)
 workspace.Map.Components.NPCs.FinalBoss.FinalBoss:FindFirstChildWhichIsA("Humanoid").RigType = "R15"
+workspace.Map.Components.NPCs.FinalBoss.FinalBoss:FindFirstChildWhichIsA("Humanoid").Health = 0
 repeat task.wait() until game.Players.LocalPlayer.PlayerGui.SkipButton.SkipDialogueButton.Visible == true
 task.wait()
-repeat task.wait() if game.Players.LocalPlayer.PlayerGui.SkipButton.SkipDialogueButton.Visible == true then ClickButton(game.Players.LocalPlayer.PlayerGui.SkipButton.SkipDialogueButton) end until game.Players.LocalPlayer.PlayerGui.SkipButton.SkipDialogueButton.Visible == false
+repeat task.wait() until game.Players.LocalPlayer.PlayerGui.SkipButton.SkipDialogueButton.Visible == false
 while task.wait() do
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Map.Components.GloveIsland.ClaimGlove.CFrame
 fireproximityprompt(workspace.Map.Components.GloveIsland.ClaimGlove:FindFirstChildWhichIsA("ProximityPrompt"))
