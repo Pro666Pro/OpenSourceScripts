@@ -57,6 +57,7 @@ function ClickButton(button, size)
         task.wait(1)
     end
 end
+if game.Players.LocalPlayer.Quests.QuestsActive._questChainHitmansHandkerchief.Value == false then
 ClickButton(game.Players.LocalPlayer.PlayerGui.QuestHunterComponent.QuestHunter.Element.Main.Main.Page.HomePage.QuestButton.Button)
 for i,v in ipairs(game.Players.LocalPlayer.PlayerGui.QuestHunterComponent.QuestHunter.Element.Main.Main.Page.QuestsPage:GetChildren()) do
 if v.Name == "NewQuestButton" and v:FindFirstChild("Button") and v.Button:FindFirstChild("Title") and v.Button.Title.Text == "A Hunt for the Hunter" then
@@ -67,6 +68,7 @@ repeat task.wait(.1) until game.Players.LocalPlayer.PlayerGui.QuestHunterCompone
 ClickButton(game.Players.LocalPlayer.PlayerGui.QuestHunterComponent.QuestHunter.Element.Main.Main.Page.QuestsPage.skibidi.Button)
 ClickButton(game.Players.LocalPlayer.PlayerGui.QuestHunterComponent.QuestHunter.Element.Main.Main.Page.QuestInfoPage.AcceptQuest, UDim2.new(10000, 0, -10000, 0))
 workspace.BountyHunterRoom.BountyHunterBooth._configPart.LeaveRemote:FireServer()
+end
 EnterPortal("Teleport2")
 repeat task.wait()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(43, -6, 92)
