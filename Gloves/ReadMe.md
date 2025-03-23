@@ -199,3 +199,18 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/OpenSourceS
 ```lua
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/OpenSourceScripts/refs/heads/main/Gloves/SwordfigterGlove.luau'))()
 ```
+
+## Auto Get Plank
+```lua
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/OpenSourceScripts/refs/heads/main/Gloves/PlankGlove.luau'))()
+```
+
+## Auto Get Fish + Voodoo
+```lua
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/OpenSourceScripts/refs/heads/main/Gloves/FishAndVoodooGloves.luau'))()
+```
+
+## Auto Get Fish + Voodoo + Trap
+```lua
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/OpenSourceScripts/refs/heads/main/Gloves/FishAndVoodooAndTrapGloves.luau'))()
+```
