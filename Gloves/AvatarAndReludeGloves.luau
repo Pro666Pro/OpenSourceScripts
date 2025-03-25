@@ -124,17 +124,21 @@ end
   
 elseif game.PlaceId == 11520107397 or game.PlaceId == 9015014224 or game.PlaceId == 6403373529 or game.PlaceId == 124596094333302 then
   
-if workspace.BountyHunterRoom.Model["Meshes/boxshadow_Cube.005"].PlayerCounter.SurfaceGui.TextLabel.Text == "0/4 Hunters" then
-if workspace.BountyHunterRoom.Model["Meshes/boxshadow_Cube.005"].Counter.SurfaceGui.TextLabel.Text ~= "1" then
-repeat task.wait(.1) until workspace.BountyHunterRoom.Model["Meshes/boxshadow_Cube.005"].Counter.SurfaceGui.TextLabel.Text == "1"
+for i,v in pairs(workspace.BountyHunterRoom:GetChildren()) do
+if v and v:IsA('Model') and v:FindFirstChild('Meshes/boxshadow_Cube.005') then
+if v["Meshes/boxshadow_Cube.005"].PlayerCounter.SurfaceGui.TextLabel.Text == "0/4 Hunters" then
+if v["Meshes/boxshadow_Cube.005"].Counter.SurfaceGui.TextLabel.Text ~= "1" then
+repeat task.wait(.1) until v["Meshes/boxshadow_Cube.005"].Counter.SurfaceGui.TextLabel.Text == "1"
 end
-while task.wait() do game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.BountyHunterRoom.Model["Meshes/boxshadow_Cube.005"].Hitbox.CFrame end
+while task.wait() do game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v["Meshes/boxshadow_Cube.005"].Hitbox.CFrame end
 else
-repeat task.wait(.1) until workspace.BountyHunterRoom.Model["Meshes/boxshadow_Cube.005"].PlayerCounter.SurfaceGui.TextLabel.Text == "0/4 Hunters"
-if workspace.BountyHunterRoom.Model["Meshes/boxshadow_Cube.005"].Counter.SurfaceGui.TextLabel.Text ~= "1" then
-repeat task.wait(.1) until workspace.BountyHunterRoom.Model["Meshes/boxshadow_Cube.005"].Counter.SurfaceGui.TextLabel.Text == "1"
+repeat task.wait(.1) until v["Meshes/boxshadow_Cube.005"].PlayerCounter.SurfaceGui.TextLabel.Text == "0/4 Hunters"
+if v["Meshes/boxshadow_Cube.005"].Counter.SurfaceGui.TextLabel.Text ~= "1" then
+repeat task.wait(.1) until v["Meshes/boxshadow_Cube.005"].Counter.SurfaceGui.TextLabel.Text == "1"
 end
-while task.wait() do game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.BountyHunterRoom.Model["Meshes/boxshadow_Cube.005"].Hitbox.CFrame end
+while task.wait() do game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v["Meshes/boxshadow_Cube.005"].Hitbox.CFrame end
+end
+end
 end
 
 else
