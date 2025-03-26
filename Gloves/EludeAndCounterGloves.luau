@@ -43,11 +43,15 @@ Instance.new("Message",workspace).Text = "Time left to receive: "..Time
 wait(1)
 workspace:FindFirstChildWhichIsA("Message"):Destroy()
 end
-wait(1.5)
-game.Workspace.Ruins.Elude.Glove.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart
+task.wait(.5)
+game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
+wait(1)
+while task.wait() do
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Ruins.Elude.Glove.CFrame
 for i,v in pairs(workspace:GetDescendants()) do
 if v:IsA("ClickDetector") then
 fireclickdetector(v)
+end
 end
 end
   
