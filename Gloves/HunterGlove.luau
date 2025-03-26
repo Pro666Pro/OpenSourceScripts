@@ -60,9 +60,8 @@ game.Loaded:Wait()
 end
 wait(5)
 for i,v in pairs(workspace:GetDescendants()) do
-if v.Name == "ShackLever" and v:FindFirstChild("ClickDetector") then
-fireclickdetector(v.ClickDetector, 0)
-fireclickdetector(v.ClickDetector, 1)
+if v.Name == "ShackLever" and v:FindFirstChildWhichIsA("ClickDetector") then
+fireclickdetector(v:FindFirstChildWhichIsA("ClickDetector"))
 end
 end
 repeat task.wait(.1) until workspace.Map.Components:FindFirstChild("GuideNPC")
