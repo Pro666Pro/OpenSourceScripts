@@ -44,12 +44,7 @@ wait(1)
 workspace:FindFirstChildWhichIsA("Message"):Destroy()
 end
 wait(1.5)
-if firetouchinterest or firetouchinterest() then
-firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, game.Workspace.Ruins.Elude.Glove, 0)
-firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, game.Workspace.Ruins.Elude.Glove, 1)
-else
 game.Workspace.Ruins.Elude.Glove.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart
-end
 for i,v in pairs(workspace:GetDescendants()) do
 if v:IsA("ClickDetector") then
 fireclickdetector(v)
