@@ -123,6 +123,8 @@ end
   
 elseif game.PlaceId == 11520107397 or game.PlaceId == 9015014224 or game.PlaceId == 6403373529 or game.PlaceId == 124596094333302 then
 
+Instance.new("Message",game.CoreGui).Text = "You're being teleported, please wait, it may take up to a minute..."
+
 for i,v in pairs(workspace.BountyHunterRoom:GetChildren()) do
 if v and v:IsA('Model') and v:FindFirstChild('Meshes/boxshadow_Cube.005') then
 if v["Meshes/boxshadow_Cube.005"].PlayerCounter.SurfaceGui.TextLabel.Text == "0/4 Hunters" then
