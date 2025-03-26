@@ -27,11 +27,8 @@ game:GetService("StarterGui"):SetCore("SendNotification",{
 
 if game.PlaceId == 11828384869 then
 
-if firetouchinterest or firetouchinterest() then
-firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, game.Workspace.Ruins.Elude.Glove, 0)
-firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, game.Workspace.Ruins.Elude.Glove, 1)
-else
-game.Workspace.Ruins.Elude.Glove.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart
+while task.wait() do
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Ruins.Elude.Glove.CFrame
 end
   
 elseif game.PlaceId == 11520107397 or game.PlaceId == 9015014224 or game.PlaceId == 6403373529 or game.PlaceId == 124596094333302 then
