@@ -214,3 +214,8 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/OpenSourceS
 ```lua
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/OpenSourceScripts/refs/heads/main/Gloves/FishAndVoodooAndTrapGloves.luau'))()
 ```
+
+## Auto Get Tank
+```lua
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/OpenSourceScripts/refs/heads/main/Gloves/Tank.luau'))()
+```
