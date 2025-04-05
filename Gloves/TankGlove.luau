@@ -65,9 +65,7 @@ game:GetService("StarterGui"):SetCore("SendNotification",{
 })
 
 if game.PlaceId == 11520107397 or game.PlaceId == 9015014224 or game.PlaceId == 6403373529 or game.PlaceId == 124596094333302 then
-shotgun = CheckGlove("Shotgun")
-pillow = CheckGlove("Pillow")
-if shotgun ~= true or pillow ~= true then return end
+if CheckGlove("Shotgun") ~= true or CheckGlove("Pillow") ~= true then return end
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 EquipGlove("Pillow")
 game:GetService("ReplicatedStorage", tostring(nil)):WaitForChild("GeneralAbility", tostring(nil)):FireServer(unpack({[1]=CFrame.new(17894.3867, -20.5577297, -3562.97974, 0.999158919, -1.34026186e-08, -0.04100601, 1.42693359e-08, 1, 2.08436735e-08, 0.04100601, -2.14112692e-08, 0.999158919);}))
