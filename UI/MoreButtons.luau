@@ -1,5 +1,10 @@
 -- You came here to skid? Too bad
 
+for i,v in pairs(game:GetService("CoreGui").TopBarApp.TopBarApp.UnibarLeftFrame:GetChildren()) do
+if v and v.Name == "StackedElements" and v:FindFirstChild("Button") and v.Button:FindFirstChild("ActualButton") and v.Button.ActualButton:FindFirstChild("Button") and v.Button.ActualButton.Button.Text == "BETA" then 
+v:FindFirstChild("Button"):Destroy()
+end
+end
 if fireclickdetector or fireclickdetector() then
 _G.EquipGloveMethod = 1
 else
