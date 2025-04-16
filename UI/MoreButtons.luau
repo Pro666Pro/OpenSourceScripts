@@ -206,7 +206,7 @@ game:GetService("StarterGui"):SetCore("SendNotification",{
 elseif workspace:FindFirstChild("Baseplate") == nil then
 game:GetService("StarterGui"):SetCore("SendNotification",{
 	Title = "No Baseplate Detected!",
-	Text = "",
+	Text = "Are you sure you executed one of my scripts that have baseplate?",
     Icon = "rbxassetid://125704683916878",
 	Duration = 36000,
 	Button1 = "Alright!"
