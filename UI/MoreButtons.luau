@@ -1,6 +1,9 @@
 -- You came here to skid? at least credit me.
 -- btw credits to creator of guistealer, everything else is by me
 
+-- You came here to skid? at least credit me.
+-- btw credits to creator of guistealer, everything else is by me
+
 for i,v in pairs(game:GetService("CoreGui").TopBarApp.TopBarApp.UnibarLeftFrame:GetChildren()) do
 if v and v.Name == "StackedElements" and v:FindFirstChild("Button") and v.Button:FindFirstChild("ActualButton") and v.Button.ActualButton:FindFirstChild("Button") and v.Button.ActualButton.Button.Text == "BETA" then 
 v:FindFirstChild("Button"):Destroy()
@@ -111,19 +114,19 @@ a["MainClick3"]["Name"] = "MainClick"
 a["MainClick3"]["Parent"] = a["3-CustomButton"]
 end
 
-if game:GetService("CoreGui"):FindFirstChild("TopBarApp"):FindFirstChild("TopBarApp"):FindFirstChild("UnibarLeftFrame"):FindFirstChild("UnibarMenu"):FindFirstChild("2"):FindFirstChild("1-CustomButton") ~= nil and game:GetService("CoreGui"):FindFirstChild("TopBarApp"):FindFirstChild("TopBarApp"):FindFirstChild("UnibarLeftFrame"):FindFirstChild("UnibarMenu"):FindFirstChild("2"):FindFirstChild("1-CustomButton"):FindFirstChild("Highlight") == nil then
+if game:GetService("CoreGui"):FindFirstChild("TopBarApp"):FindFirstChild("TopBarApp"):FindFirstChild("UnibarLeftFrame"):FindFirstChild("UnibarMenu"):FindFirstChild("2"):FindFirstChild("1-CustomButton") and game:GetService("CoreGui"):FindFirstChild("TopBarApp"):FindFirstChild("TopBarApp"):FindFirstChild("UnibarLeftFrame"):FindFirstChild("UnibarMenu"):FindFirstChild("2"):FindFirstChild("1-CustomButton"):FindFirstChild("Highlight") == nil then
 a["FirstHighlight"]["Visible"] = false
 a["FirstHighlight"]["Name"] = "Highlight"
 a["FirstHighlight"]["Parent"] = a["1-CustomButton"]
 end
 
-if game:GetService("CoreGui"):FindFirstChild("TopBarApp"):FindFirstChild("TopBarApp"):FindFirstChild("UnibarLeftFrame"):FindFirstChild("UnibarMenu"):FindFirstChild("2"):FindFirstChild("2-CustomButton") ~= nil and game:GetService("CoreGui"):FindFirstChild("TopBarApp"):FindFirstChild("TopBarApp"):FindFirstChild("UnibarLeftFrame"):FindFirstChild("UnibarMenu"):FindFirstChild("2"):FindFirstChild("2-CustomButton"):FindFirstChild("Highlight") == nil then
+if game:GetService("CoreGui"):FindFirstChild("TopBarApp"):FindFirstChild("TopBarApp"):FindFirstChild("UnibarLeftFrame"):FindFirstChild("UnibarMenu"):FindFirstChild("2"):FindFirstChild("2-CustomButton") and game:GetService("CoreGui"):FindFirstChild("TopBarApp"):FindFirstChild("TopBarApp"):FindFirstChild("UnibarLeftFrame"):FindFirstChild("UnibarMenu"):FindFirstChild("2"):FindFirstChild("2-CustomButton"):FindFirstChild("Highlight") == nil then
 a["SecondHighlight"]["Visible"] = false
 a["SecondHighlight"]["Name"] = "Highlight"
 a["SecondHighlight"]["Parent"] = a["2-CustomButton"]
 end
 
-if game:GetService("CoreGui"):FindFirstChild("TopBarApp"):FindFirstChild("TopBarApp"):FindFirstChild("UnibarLeftFrame"):FindFirstChild("UnibarMenu"):FindFirstChild("2"):FindFirstChild("3-CustomButton") ~= nil and game:GetService("CoreGui"):FindFirstChild("TopBarApp"):FindFirstChild("TopBarApp"):FindFirstChild("UnibarLeftFrame"):FindFirstChild("UnibarMenu"):FindFirstChild("2"):FindFirstChild("3-CustomButton"):FindFirstChild("Highlight") == nil then
+if game:GetService("CoreGui"):FindFirstChild("TopBarApp"):FindFirstChild("TopBarApp"):FindFirstChild("UnibarLeftFrame"):FindFirstChild("UnibarMenu"):FindFirstChild("2"):FindFirstChild("3-CustomButton") and game:GetService("CoreGui"):FindFirstChild("TopBarApp"):FindFirstChild("TopBarApp"):FindFirstChild("UnibarLeftFrame"):FindFirstChild("UnibarMenu"):FindFirstChild("2"):FindFirstChild("3-CustomButton"):FindFirstChild("Highlight") == nil then
 a["ThirdHighlight"]["Visible"] = false
 a["ThirdHighlight"]["Name"] = "Highlight"
 a["ThirdHighlight"]["Parent"] = a["3-CustomButton"]
