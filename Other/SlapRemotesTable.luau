@@ -107,9 +107,4 @@ slaps = {
     ["God's Hand"] = RS.Godshand,
     ["Error"] = RS.Errorhit
 }
-for i,v in pairs(game.Players.LocalPlayer._unlockedGloves:GetChildren()) do
-if v and not slaps[v] then
-slaps[v] = RS.GeneralHit
-end
-end
 return slaps
