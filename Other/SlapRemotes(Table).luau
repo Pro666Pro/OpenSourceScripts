@@ -108,7 +108,7 @@ slaps = {
     ["Error"] = RS.Errorhit
 }
 for i,v in pairs(game.Players.LocalPlayer._unlockedGloves:GetChildren()) do
-if v and not table.find(table, v) then
+if v and not slaps[v] then
 slaps[v] = RS.GeneralHit
 end
 end
