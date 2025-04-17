@@ -54,6 +54,7 @@ local a = {
     ["ThirdHighlight"] = game:GetService("CoreGui").TopBarApp.TopBarApp.UnibarLeftFrame.UnibarMenu["2"]["3"].nine_dot.Highlighter:Clone()
 }
 
+if game:GetService("CoreGui"):FindFirstChild("TopBarApp"):FindFirstChild("TopBarApp"):FindFirstChild("UnibarLeftFrame"):FindFirstChild("UnibarMenu"):FindFirstChild("2"):FindFirstChild("1-CustomButton") == nil then
 a["1-CustomButton"]["Position"] = UDim2.new(0, 140, 0, 0)
 a["1-CustomButton"]["Size"] = UDim2.new(0, 44, 0, 44)
 a["1-CustomButton"]["BackgroundTransparency"] = 1
@@ -70,7 +71,9 @@ a["MainClick"]["Image"] = "rbxthumb://type=Asset&id=11999546234&w=150&h=150"
 a["MainClick"]["ImageContent"] = Content.fromUri("rbxthumb://type=Asset&id=11999546234&w=150&h=150")
 a["MainClick"]["Name"] = "MainClick"
 a["MainClick"]["Parent"] = a["1-CustomButton"]
+end
 
+if game:GetService("CoreGui"):FindFirstChild("TopBarApp"):FindFirstChild("TopBarApp"):FindFirstChild("UnibarLeftFrame"):FindFirstChild("UnibarMenu"):FindFirstChild("2"):FindFirstChild("2-CustomButton") == nil then
 a["2-CustomButton"]["Position"] = UDim2.new(0, 188, 0, 0)
 a["2-CustomButton"]["Size"] = UDim2.new(0, 44, 0, 44)
 a["2-CustomButton"]["BackgroundTransparency"] = 1
@@ -87,7 +90,9 @@ a["MainClick2"]["Image"] = "rbxthumb://type=Asset&id=230820640&w=150&h=150"
 a["MainClick2"]["ImageContent"] = Content.fromUri("rbxthumb://type=Asset&id=230820640&w=150&h=150")
 a["MainClick2"]["Name"] = "MainClick"
 a["MainClick2"]["Parent"] = a["2-CustomButton"]
+end
 
+if game:GetService("CoreGui"):FindFirstChild("TopBarApp"):FindFirstChild("TopBarApp"):FindFirstChild("UnibarLeftFrame"):FindFirstChild("UnibarMenu"):FindFirstChild("2"):FindFirstChild("3-CustomButton") == nil then
 a["3-CustomButton"]["Position"] = UDim2.new(0, 236, 0, 0)
 a["3-CustomButton"]["Size"] = UDim2.new(0, 44, 0, 44)
 a["3-CustomButton"]["BackgroundTransparency"] = 1
@@ -104,18 +109,25 @@ a["MainClick3"]["Image"] = "rbxthumb://type=Asset&id=13492317633&w=150&h=150"
 a["MainClick3"]["ImageContent"] = Content.fromUri("rbxthumb://type=Asset&id=13492317633&w=150&h=150")
 a["MainClick3"]["Name"] = "MainClick"
 a["MainClick3"]["Parent"] = a["3-CustomButton"]
+end
 
+if game:GetService("CoreGui"):FindFirstChild("TopBarApp"):FindFirstChild("TopBarApp"):FindFirstChild("UnibarLeftFrame"):FindFirstChild("UnibarMenu"):FindFirstChild("2"):FindFirstChild("1-CustomButton") ~= nil and game:GetService("CoreGui"):FindFirstChild("TopBarApp"):FindFirstChild("TopBarApp"):FindFirstChild("UnibarLeftFrame"):FindFirstChild("UnibarMenu"):FindFirstChild("2"):FindFirstChild("1-CustomButton"):FindFirstChild("Highlight") == nil then
 a["FirstHighlight"]["Visible"] = false
 a["FirstHighlight"]["Name"] = "Highlight"
 a["FirstHighlight"]["Parent"] = a["1-CustomButton"]
+end
 
+if game:GetService("CoreGui"):FindFirstChild("TopBarApp"):FindFirstChild("TopBarApp"):FindFirstChild("UnibarLeftFrame"):FindFirstChild("UnibarMenu"):FindFirstChild("2"):FindFirstChild("2-CustomButton") ~= nil and game:GetService("CoreGui"):FindFirstChild("TopBarApp"):FindFirstChild("TopBarApp"):FindFirstChild("UnibarLeftFrame"):FindFirstChild("UnibarMenu"):FindFirstChild("2"):FindFirstChild("2-CustomButton"):FindFirstChild("Highlight") == nil then
 a["SecondHighlight"]["Visible"] = false
 a["SecondHighlight"]["Name"] = "Highlight"
 a["SecondHighlight"]["Parent"] = a["2-CustomButton"]
+end
 
+if game:GetService("CoreGui"):FindFirstChild("TopBarApp"):FindFirstChild("TopBarApp"):FindFirstChild("UnibarLeftFrame"):FindFirstChild("UnibarMenu"):FindFirstChild("2"):FindFirstChild("3-CustomButton") ~= nil and game:GetService("CoreGui"):FindFirstChild("TopBarApp"):FindFirstChild("TopBarApp"):FindFirstChild("UnibarLeftFrame"):FindFirstChild("UnibarMenu"):FindFirstChild("2"):FindFirstChild("3-CustomButton"):FindFirstChild("Highlight") == nil then
 a["ThirdHighlight"]["Visible"] = false
 a["ThirdHighlight"]["Name"] = "Highlight"
 a["ThirdHighlight"]["Parent"] = a["3-CustomButton"]
+end
 
 function Firstclick()
 
@@ -218,7 +230,7 @@ end
 
 function Thirdclick()
 
-if game.Players.LocalPlayer and game.Players.LocalPlayer:FindFirstChild("leaderstats") and game.Players.LocalPlayer.leaderstats:FindFirstChild("Slaps") then
+if game.Players.LocalPlayer and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil and game.Players.LocalPlayer:FindFirstChild("leaderstats") and game.Players.LocalPlayer.leaderstats:FindFirstChild("Slaps") then
 old = game.Players.LocalPlayer.leaderstats.Glove.Value
 task.wait()
 EquipGlove("Ghost")
