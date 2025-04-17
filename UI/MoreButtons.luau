@@ -1,9 +1,6 @@
 -- You came here to skid? at least credit me.
 -- btw credits to creator of guistealer, everything else is by me
 
--- You came here to skid? at least credit me.
--- btw credits to creator of guistealer, everything else is by me
-
 for i,v in pairs(game:GetService("CoreGui").TopBarApp.TopBarApp.UnibarLeftFrame:GetChildren()) do
 if v and v.Name == "StackedElements" and v:FindFirstChild("Button") and v.Button:FindFirstChild("ActualButton") and v.Button.ActualButton:FindFirstChild("Button") and v.Button.ActualButton.Button.Text == "BETA" then 
 v:FindFirstChild("Button"):Destroy()
