@@ -2,15 +2,7 @@
 
 ## Directories:
 
-### Gloves
-
-#### Auto get glove scripts
-
-### Farm
-
-#### Farm slaps or null shards or orbs scripts
-
-# Auto Get Gloves Scripts
+### Idk check all of them by yourself
 
 ## Auto Get Boxer
 ```lua
