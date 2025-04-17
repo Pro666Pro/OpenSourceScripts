@@ -1,4 +1,34 @@
 -- i know you are here to skid it >:[
+
+ 
+ScreenGui = Instance.new("ScreenGui")
+Frame = Instance.new("Frame")
+TextButton = Instance.new("TextButton")
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ScreenGui.ResetOnSpawn = false
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.18982631, 0, 0.0528455302, 0)
+Frame.Size = UDim2.new(0, 0, 0, 0)
+Frame.Active = true
+Frame.Draggable = false
+TextButton.Parent = Frame
+TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.BorderSizePixel = 0
+TextButton.Position = UDim2.new(1, 1, 1, 1)
+TextButton.Size = UDim2.new(0, 100, 0, 100)
+TextButton.Font = Enum.Font.SourceSans
+TextButton.Text = "Spoof"
+TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.TextScaled = true
+TextButton.TextSize = 14.000
+TextButton.TextWrapped = true
+TextButton.Draggable = true
+
 Spy = false
 hit = loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/OpenSourceScripts/refs/heads/main/Other/SlapRemotesTable.luau'))()
 name = loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/OpenSourceScripts/refs/heads/main/Other/SlapRemotesNamesTable.luau'))()
@@ -65,4 +95,5 @@ game:GetService("StarterGui"):SetCore("SendNotification",{
 	Button1 = "Ok"
 })
 end
+TextButton.MouseButton1Click:Connect(SpyHit)
 game:GetService('Players').LocalPlayer.Character:FindFirstChildWhichIsA('Humanoid').Died:Connect(OverrideDisable)
