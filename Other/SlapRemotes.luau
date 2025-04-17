@@ -2,7 +2,7 @@
 -- His github: https://github.com/Articles-Hub
 local RequireService = cloneref or function(clone) return clone end
 RS = RequireService(game:GetService("ReplicatedStorage"))
-local table = {
+slaps = {
     ["Default"] = RS.b,
     ["Extended"] = RS.b,
     ------------------------------------------------------------------------
@@ -109,7 +109,7 @@ local table = {
 }
 for i,v in pairs(game.Players.LocalPlayer._unlockedGloves:GetChildren()) do
 if v and not table.find(table, v) then
-table[v] = RS.GeneralHit
+slaps[v] = RS.GeneralHit
 end
 end
-return table
+return slaps
