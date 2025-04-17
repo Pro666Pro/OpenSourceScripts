@@ -49,4 +49,20 @@ game:GetService("StarterGui"):SetCore("SendNotification",{
 	Duration = 10,
 	Button1 = "Ok"
 })
-game:GetService('Players').LocalPlayer.Character:FindFirstChildWhichIsA('Humanoid').Died:Connect(SpyHit)
+local function OverrideDisable()
+if name[game.Players.LocalPlayer.leaderstats.Glove.Value] ~= nil then
+game.ReplicatedStorage.b.Name = name[game.Players.LocalPlayer.leaderstats.Glove.Value]
+else
+game.ReplicatedStorage.b.Name = "GeneralHit"
+end
+game.ReplicatedStorage.BlockedRemote.Name = "b"
+Spy = false
+game:GetService("StarterGui"):SetCore("SendNotification",{
+	Title = "DS Disabled!",
+	Text = "",
+    Icon = "rbxassetid://125704683916878",
+	Duration = 10,
+	Button1 = "Ok"
+})
+end
+game:GetService('Players').LocalPlayer.Character:FindFirstChildWhichIsA('Humanoid').Died:Connect(OverrideDisable)
