@@ -37,6 +37,9 @@ Example: if HasGlove("God's Hand") then { doing something } end
 EquipGlove(GloveName, HowMuchTimeToWaitAfterEquipping) - Equips glove
 Example: EquipGlove("Replica")
 
+RandomGlove(UnderSlaps) - Returns Random Glove
+Example: print(RandomGlove(50)) { It printed "Default" }
+
 List of portals:
 "Teleport1" - Normal Arena
 "Teleport2" - Default Arena
