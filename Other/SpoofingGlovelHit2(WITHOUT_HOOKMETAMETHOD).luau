@@ -34,7 +34,7 @@ Spoof.CanCollide = true
 end
 end)
 game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").AnimationPlayed:Connect(function(anim)
-if IfEquippedGlovel() and anim.Name == "Slap" then
+if IfEquippedGlovel() and anim.Name == "Slap" and workspace:FindFirstChild("GlovelSpoofer") then
 local time = tick()
 while tick() - time < 0.5 do
 task.wait()
