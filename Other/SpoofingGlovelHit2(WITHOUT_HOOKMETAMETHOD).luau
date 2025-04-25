@@ -39,7 +39,7 @@ local time = tick()
 while tick() - time < 0.5 do
 task.wait()
 if HasRoot() then
-Spoof.CFrame = game.Players.LocalPlayer.Character["HumanoidRootPart"].CFrame * CFrame.new(0,-3.09,0)
+Spoof.CFrame = game.Players.LocalPlayer.Character["HumanoidRootPart"].CFrame * CFrame.new(0,-3.095,0)
 end
 end
 Spoof.CFrame = CFrame.new(0,50,0)
