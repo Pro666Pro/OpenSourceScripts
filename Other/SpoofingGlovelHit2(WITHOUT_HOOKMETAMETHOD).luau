@@ -5,7 +5,7 @@ Spoof.CanCollide = true
 Spoof.CanTouch = true
 Spoof.Anchored = true
 Spoof.Material = Enum.Material.Air
-Spoof.Size = Vector3.new(10,1.25,10)
+Spoof.Size = Vector3.new(10,.2,10)
 Spoof.Parent = workspace
 
 function IfEquippedGlovel()
@@ -39,7 +39,7 @@ local time = tick()
 while tick() - time < 0.5 do
 task.wait()
 if HasRoot() then
-Spoof.CFrame = game.Players.LocalPlayer.Character["HumanoidRootPart"].CFrame * CFrame.new(0,-3.595,0)
+Spoof.CFrame = game.Players.LocalPlayer.Character["HumanoidRootPart"].CFrame * CFrame.new(0,-3.09,0)
 end
 end
 Spoof.CFrame = CFrame.new(0,50,0)
