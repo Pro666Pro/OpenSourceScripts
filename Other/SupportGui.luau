@@ -76,9 +76,7 @@ Rayfield:Notify({
 end
 
 local Main = Window:CreateTab("Main", 98952570395426)
-local EA = Window:CreateTab("Early Access", 98952570395426)
 local Other = Window:CreateTab("Other", 12809025337)
-local Credits = Window:CreateTab("Credits", 15781236875)
 
 local ScriptLabel = Main:CreateLabel("Choose script here!")
 _G.Script = "Unknown"
@@ -106,37 +104,47 @@ Notify("Success", "".._G.MessageType.." choosen!", 10, true)
    end,
 })
 
-local MainButton = Main:CreateButton({
-   Name = "Send Message",
-   Callback = function()
---loadstring(game:HttpGet("https://raw.githubusercontent.com/Pro666Pro/slapfarmgui/refs/heads/main/".._G.Version..".lua" or "https://raw.githubusercontent.com/Pro666Pro/slapfarmgui/refs/heads/main/".._G.Version..".0.lua"))()
+local MessageLabel = Main:CreateLabel("Write message here!")
+_G.Message = "Unknown"
+local MessageTextbox = Main:CreateInput({
+   Name = "Write Message",
+   PlaceholderText = "Input...",
+   NumbersOnly = false,
+   OnEnter = true,
+   RemoveTextAfterFocusLost = false,
+   Callback = function(Text)
+_G.Message = Text
+Notify("Success", "Message written!", 10, true)
    end,
 })
 
-local EALabel = EA:CreateLabel("No Early Access. [ Yet ]")
+_G.ArleadyBeingSent = false
+local MainButton = Main:CreateButton({
+   Name = "Send Message",
+   Callback = function()
+if _G.ArleadyBeingSent ~= true then
+_G.ArleadyBeingSent = true
+task.delay(60, function()
+_G.ArleadyBeingSent = false
+end
+local success, error = pcall(function()
+Notify("Success", "Sending message...", 10, true)
+--loadstring(game:HttpGet("https://raw.githubusercontent.com/Pro666Pro/slapfarmgui/refs/heads/main/".._G.Version..".lua" or "https://raw.githubusercontent.com/Pro666Pro/slapfarmgui/refs/heads/main/".._G.Version..".0.lua"))()
+Notify("Success", "Message sent!", 10, true)
+end)
+if not success then
+Notify("Error", "Message has not been sent. Possible error: webhook is down.")
+end
+else
+Notify("Error", "You're sending messages too fast!")
+end
+   end,
+})
 
 local CloseHubButton = Other:CreateButton({
    Name = "Close Launcher",
    Callback = function()
 Rayfield:Destroy()
-   end,
-})
-
-local CreditsLabel = Credits:CreateLabel("Slap Farm Gui v4. [ Owned By Nexer1234 ]")
-
-local YoutubeButton = Credits:CreateButton({
-   Name = "Youtube Channel",
-   Callback = function()
-setclipboard(tostring("https://www.youtube.com/@nexer1234"))
-Notify("Copied!", "Copied youtube channel link to clipboard!", 10, true)
-   end,
-})
-
-local DiscordButton = Credits:CreateButton({
-   Name = "Discord Server",
-   Callback = function()
-setclipboard(tostring("https://discord.gg/s2VCjQUxBc"))
-Notify("Copied!", "Copied discord server link to clipboard!", 10, true)
    end,
 })
 
