@@ -105,15 +105,19 @@ function generateticketid()
 end
 
 function ttostring(tbl)
-    local result
-    for i, v in ipairs(tbl) do
-        result = tostring(v)
-        if i < #tbl then
-            result = result .. ", "
+    if type(tbl) == "table" then
+        local result
+        for i, v in ipairs(tbl) do
+            result = tostring(v)
+            if i < #tbl then
+                 result = result .. ", "
+            end
         end
+        result = result
+        return result
+    else
+        return tbl
     end
-    result = result
-    return result
 end
 
 Window = Rayfield:CreateWindow({
