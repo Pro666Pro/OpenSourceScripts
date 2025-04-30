@@ -1,4 +1,3 @@
-ff
 pcall(function()
 local a = Instance.new("Hint")
 a.Text = "Support Gui Loading..."
@@ -21,6 +20,100 @@ Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 elseif not success then
 print("Loaded Old Rayfield")
 Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/SiriusSoftwareLtd/Rayfield/main/source.lua'))()
+end
+
+RequireService = cloneref or function(clone) return clone end
+game = game or Ugc
+Players = RequireService(game:GetService("Players"))
+Player = Players.LocalPlayer
+ReplicatedStorage = RequireService(game:GetService("ReplicatedStorage"))
+ReplicatedFirst = RequireService(game:GetService("ReplicatedFirst"))
+UserInputService = RequireService(game:GetService("UserInputService"))
+Stats = RequireService(game:GetService("Stats"))
+HttpService = RequireService(game:GetService("HttpService"))
+
+function isprem()
+    local prem = "No"
+    if game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId,1016382904) then
+        prem = "Yes"
+    end
+    return prem
+end
+
+function getusername()
+    return Player.Name
+end
+
+function getuserid()
+    return Player.UserId
+end
+
+function getping()
+    return math.round(Stats.Network.ServerStatsItem["Data Ping"]:GetValue())
+end
+
+function getexecutor()
+    local ex = identifyexecutor()
+    if ex == "NX" then
+       ex = "Luna"
+    end
+    return ex
+end
+
+function getwebhook()
+    local webhook = loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/OpenSourceScripts/refs/heads/main/Forsaken/Http/Webhook.dll'))()
+    return webhook
+end
+
+function getdevice()
+    local dev = "Unknown"
+    local dev_choosen = false
+    if UserInputService.KeyboardEnabled and dev_choosen ~= true then
+        dev = "PC"
+        dev_choosen = true
+    elseif UserInputService.GamepadEnabled and dev_choosen ~= true then
+        dev = "Gamepad"
+        dev_choosen = true
+    elseif UserInputService.TouchEnabled and dev_choosen ~= true then
+        dev = "Mobile"
+        dev_choosen = true
+    end
+    return dev
+end
+
+function getscript()
+    if _G.Script ~= "Unknown" then
+        return _G.Script
+    end
+end
+
+function getmsgtype()
+    if _G.MessageType ~= "Unknown" then
+        return _G.MessageType
+    end
+end
+
+function getmsg()
+    if _G.Message ~= "Unknown" then
+        return _G.Message
+    end
+end
+
+function generateticketid()
+    local ticket = math.random(0,999999999)
+    return ticket
+end
+
+function ttostring(tbl)
+    local result
+    for i, v in ipairs(tbl) do
+        result = tostring(v)
+        if i < #tbl then
+            result = result .. ", "
+        end
+    end
+    result = result
+    return result
 end
 
 Window = Rayfield:CreateWindow({
@@ -75,7 +168,10 @@ Rayfield:Notify({
 end
 
 local Main = Window:CreateTab("Main", 98952570395426)
+local FeedbackLog = Window:CreateTab("Feedback Log", 98952570395426)
 local Other = Window:CreateTab("Other", 12809025337)
+
+local FeedBackLabel = FeedbackLog:CreateLabel("Nothing here yet!")
 
 local ScriptLabel = Main:CreateLabel("Choose script here!")
 _G.Script = "Unknown"
@@ -85,8 +181,8 @@ local ScriptDropdown = Main:CreateDropdown({
    CurrentOption = "Unknown",
    MultiSelection = false,
    Callback = function(Option)
-_G.Script = Option
-Notify("Success", "".._G.Script.." choosen!", 10, true)
+_G.Script = ttostring(Option)
+Notify("Success", ""..ttostring(Option).." choosen!", 4, true)
    end,
 })
 
@@ -98,8 +194,8 @@ local CategoryDropdown = Main:CreateDropdown({
    CurrentOption = "Unknown",
    MultiSelection = false,
    Callback = function(Option)
-_G.MessageType = Option
-Notify("Success", "".._G.MessageType.." choosen!", 10, true)
+_G.MessageType = ttostring(Option)
+Notify("Success", ""..ttostring(Option).." choosen!", 4, true)
    end,
 })
 
@@ -113,7 +209,7 @@ local MessageTextbox = Main:CreateInput({
    RemoveTextAfterFocusLost = false,
    Callback = function(Text)
 _G.Message = Text
-Notify("Success", "Message written!", 10, true)
+Notify("Success", "Message written!", 4, true)
    end,
 })
 
@@ -138,19 +234,65 @@ Your username and userid ( for feedback )
 That's all! So please don't nuke it 😽
 ]]--
 
+ticketID = generateticketid()
+req = http_request or request or HttpPost or syn.request
+if req then
+local data = {
+    ["username"] = "Support Bot",
+    ["avatar_url"] = "https://i.imgur.com/a/SbPHgnH",
+    ["content"] = "@everyone **NEW MESSAGE!** Script: "..getscript().."",
+    ["embeds"] = {
+       {
+           ["title"] = "Category: "..getmsgtype().."",
+           ["description"] = "Message: "..getmsg().."",    
+           ["type"] = "rich",
+           ["color"] = 1000000,
+           ["footer"] = {
+             ["text"] = ""..ticketID.."",
+           },
+       },
+       {
+           ["title"] = "More Information ( For Feedback )",
+           ["description"] = "Device: "..getdevice()..". Ping: "..getping()..". Executor: "..getexecutor()..". Roblox Profile: [Click](https://www.roblox.com/users/"..getuserid().."/profile)",    
+           ["type"] = "rich",
+           ["color"] = 1000000,
+           ["footer"] = {
+             ["text"] = ""..getusername().."",
+           },
+       },
+   }
+}
+print("Sending Your Message...")
+local url = getwebhook()
+local datab = game:GetService("HttpService"):JSONEncode(data)
+local head = {
+    ["content-type"] = "application/json"
+}
+req({Url = url, Body = datab, Method = "POST", Headers = head})
+print("Sent!")
+end
 
+local success, error = pcall(function()
+setclipboard(tostring(ticketID))
+end)
+if success then
+Notify("Success", "Message sent! Your ticket ID has been copied to clipboard!", 10, true)
+elseif not success then
+Notify("Success", "Message sent! Your ticket ID: "..ticketID.."", 10, true)
+end
 
-Notify("Success", "Message sent!", 10, true)
 task.delay(60, function()
 _G.ArleadyBeingSent = false
-end
+end)
+
 end)
 if not success then
 _G.ArleadyBeingSent = false
-Notify("Error", "Message has not been sent. Possible errors: webhook is down or you didn't choose category/script or you didn't wrote message.")
+Notify("Error", "Message has not been sent. Possible errors: webhook is down or you didn't choose category/script or you didn't wrote message. Check console for more detailed info!")
+print(error)
 end
 else
-Notify("Error", "You're sending messages too fast!")
+Notify("Error", "You're sending messages too fast! Please wait a bit.", 5)
 end
    end,
 })
