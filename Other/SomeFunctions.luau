@@ -82,6 +82,39 @@ DisableDeathBarrier = function() if Workspace:FindFirstChild("DEATHBARRIER") the
 EnableDeathBarrier = function() if Workspace:FindFirstChild("DEATHBARRIER") then for i,v in pairs(Workspace.DEATHBARRIER:GetChildren()) do if v:IsA("BasePart") and v.Name == "BLOCK" then v.CanTouch = true end end Workspace.DEATHBARRIER.CanTouch = true Workspace.DEATHBARRIER2.CanTouch = true Workspace.dedBarrier.CanTouch = true Workspace.ArenaBarrier.CanTouch = true Workspace.AntiDefaultArena.CanTouch = true end end
 HasGlove = function(Glove) if Glove and Players.LocalPlayer:FindFirstChild("_unlockedGloves") and Players.LocalPlayer._unlockedGloves:FindFirstChild(Glove) then return Players.LocalPlayer._unlockedGloves:WaitForChild(Glove).Value end end
 RandomGlove = function(undervalue) TotalGloves = 0 A = {} undervalue = undervalue or 1000000 if Workspace:FindFirstChild("Lobby") and undervalue then for i,v in pairs(Workspace.Lobby.GloveStands:GetChildren()) do if v and v:FindFirstChild("SlapsInfoPart") and v.SlapsInfoPart:FindFirstChild("SurfaceGui") and v.SlapsInfoPart.SurfaceGui:FindFirstChild("ImageLabel") and v.SlapsInfoPart.SurfaceGui:FindFirstChild("TextLabel") and v.SlapsInfoPart.SurfaceGui:FindFirstChild("TextLabel").Text ~= nil and tonumber(v.SlapsInfoPart.SurfaceGui:FindFirstChild("TextLabel").Text) then if tonumber(v.SlapsInfoPart.SurfaceGui:FindFirstChild("TextLabel").Text) < undervalue then table.insert(A, v.Name) TotalGloves = TotalGloves + 1 end end end if TotalGloves >= 2 then return A[math.random(1, TotalGloves)] end end end
+NexerModule = {}
+
+_G.EquipGloveMethod = 1
+function NexerModule:EquipGlove(glove, time)
+    glove = glove or "Default"
+    time = time or 0.4
+    task.wait()
+    repeat task.wait() until game.Players.LocalPlayer and game.Players.LocalPlayer:FindFirstChild("leaderstats") and game.Players.LocalPlayer.leaderstats:FindFirstChild("Glove")
+    task.wait()
+    if _G.EquipGloveMethod == 1 then
+    if workspace:FindFirstChild("Lobby") and workspace.Lobby:FindFirstChild(glove) and workspace.Lobby[glove]:FindFirstChildWhichIsA("ClickDetector") then
+        if fireclickdetector or fireclickdetector() then
+            fireclickdetector(workspace.Lobby[glove].ClickDetector)
+            repeat task.wait() until game.Players.LocalPlayer.leaderstats.Glove.Value == glove
+            task.wait(time)
+        end
+    end
+    elseif _G.EquipGloveMethod == 2 then
+    if workspace:FindFirstChild("Lobby") and workspace.Lobby:FindFirstChild(glove) then
+        for i,v in pairs(game.ReplicatedStorage._NETWORK:GetChildren()) do
+		if game.Players.LocalPlayer.leaderstats.Glove.Value == glove then
+                break
+                end
+		if v and v.Name:find("{") or v.Name:match("{") and v:IsA("RemoteEvent") then
+                v:FireServer(unpack({[1]=glove;}))
+		elseif v and v.Name:find("{") or v.Name:match("{") and v:IsA("RemoteFunction") then
+		v:InvokeServer(unpack({[1]=glove;}))
+		end
+                task.wait(time + .15)
+	 end
+    end
+    end
+end
 
 _G.EquipGloveMethod = 1
 function EquipGlove(glove, time)
