@@ -1,1 +1,2 @@
-
+-- i'm just joking! :)
+-- even if it's going to be open source, it'll be not soon prob
