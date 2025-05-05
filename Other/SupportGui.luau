@@ -199,8 +199,8 @@ local FeedbackParagraph_877543 = FeedbackLog:CreateParagraph({Title = "Status: N
 local FeedBackLabel_149529232 = FeedbackLog:CreateLabel("Ticket 149529232")
 local FeedbackParagraph_149529232 = FeedbackLog:CreateParagraph({Title = "Status: Fixed ✅", Content = "Message: ''Hello, how soon will Gui's Weak Farm be fixed?'' Payout: 57 robux"})
 
-local FeedBackLabel_149529232 = FeedbackLog:CreateLabel("Ticket 149529232")
-local FeedbackParagraph_149529232 = FeedbackLog:CreateParagraph({Title = "Status: Fixed ✅", Content = "Message: ''Hello, how soon will Gui's Weak Farm be fixed?'' Payout: 57 robux"})
+local FeedBackLabel_1 = FeedbackLog:CreateLabel("Ticket 1")
+local FeedbackParagraph_1 = FeedbackLog:CreateParagraph({Title = "Status: Fixed ✅", Content = "Message: ''PLACEHOLDER'' Payout: 0 robux"})
 
 
 local ScriptLabel = Main:CreateLabel("Choose script here!")
