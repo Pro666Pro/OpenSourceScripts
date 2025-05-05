@@ -130,8 +130,6 @@ if _G.SnowFarm == true then
 
 -- Deleting loading message
 pcall(function()
-HintGui.Text = "Slap Farm Gui Loaded!"
-task.wait(5)
 HintGui:Destroy()
 end)
 
