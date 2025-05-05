@@ -175,7 +175,33 @@ local Main = Window:CreateTab("Main", 98952570395426)
 local FeedbackLog = Window:CreateTab("Feedback Log", 98952570395426)
 local Other = Window:CreateTab("Other", 12809025337)
 
-local FeedBackLabel = FeedbackLog:CreateLabel("Nothing here yet!")
+local FeedBackLabel_62730961 = FeedbackLog:CreateLabel("Ticket 62730961")
+local FeedbackParagraph_62730961 = FeedbackLog:CreateParagraph({Title = "Status: Fixed ✅", Content = "Message: ''cant exec the sfg in the dark realm thingy'' Payout: 0 robux"})
+
+local FeedBackLabel_956961203 = FeedbackLog:CreateLabel("Ticket 956961203")
+local FeedbackParagraph_956961203 = FeedbackLog:CreateParagraph({Title = "Status: Being Fixed ⚙️", Content = "Message: ''after some time using engineer mastery farm it kick you ''iamgine exploiting hahahahaha'' '' Payout: 5 robux"})
+
+local FeedBackLabel_956961203 = FeedbackLog:CreateLabel("Ticket 956961203")
+local FeedbackParagraph_956961203 = FeedbackLog:CreateParagraph({Title = "Status: Being Fixed ⚙️", Content = "Message: ''after farming engineer mastery (baller and blink methods) actually kicks you "imagine exploiting hahahahaha" '' Payout: 5 robux"})
+
+local FeedBackLabel_911164034 = FeedbackLog:CreateLabel("Ticket 911164034")
+local FeedbackParagraph_911164034 = FeedbackLog:CreateParagraph({Title = "Status: Not Fixable / Patched ❌", Content = "Message: ''the grab all items in slap royale dosent work it like brings you to them but it dosent grab them neither does it show you the option to grab it'' Payout: 0 robux"})
+
+local FeedBackLabel_113617683 = FeedbackLog:CreateLabel("Ticket 113617683")
+local FeedbackParagraph_113617683 = FeedbackLog:CreateParagraph({Title = "Status: Not Script Issue ❔", Content = "Message: ''Like whenever I do tthe relied glove in the boss fight the guide battle is buggy and it doesn’t damage the boss'' Way to fix: Your internet connection is not stable. Make sure you're not using mcdonald's wifi! /j"})
+
+local FeedBackLabel_727635847 = FeedbackLog:CreateLabel("Ticket 727635847")
+local FeedbackParagraph_727635847 = FeedbackLog:CreateParagraph({Title = "Status: Not Script Issue ❔", Content = "Message: ''i can't get badge in ice trial'' Way to fix: Make sure there's ice issence! If there's no, just rejoin to get frostbite!"})
+
+local FeedBackLabel_877543 = FeedbackLog:CreateLabel("Ticket 877543")
+local FeedbackParagraph_877543 = FeedbackLog:CreateParagraph({Title = "Status: Not Script Issue ❔", Content = "Message: ''Hey in Druid TTS the script doesn’t work'' Way to fix: Sorry, but there's no support to druid/scythe tds yet!"})
+
+local FeedBackLabel_149529232 = FeedbackLog:CreateLabel("Ticket 149529232")
+local FeedbackParagraph_149529232 = FeedbackLog:CreateParagraph({Title = "Status: Fixed ✅", Content = "Message: ''Hello, how soon will Gui's Weak Farm be fixed?'' Payout: 57 robux"})
+
+local FeedBackLabel_149529232 = FeedbackLog:CreateLabel("Ticket 149529232")
+local FeedbackParagraph_149529232 = FeedbackLog:CreateParagraph({Title = "Status: Fixed ✅", Content = "Message: ''Hello, how soon will Gui's Weak Farm be fixed?'' Payout: 57 robux"})
+
 
 local ScriptLabel = Main:CreateLabel("Choose script here!")
 _G.Script = "Unknown"
