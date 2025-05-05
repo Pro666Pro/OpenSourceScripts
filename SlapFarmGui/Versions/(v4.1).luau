@@ -14,9 +14,7 @@ ___.                                                  ____________  ________    
  | \_\ \___  |      |   |  \  ___/ >    <\  ___/|  | \/   /       \  /       \/    ^   /  
  |___  / ____|      |___|  /\___  >__/\_ \\___  >__|  |___\_______ \/______  /\____   |   
      \/\/                \/     \/      \/    \/                  \/       \/      |__| 
-]]--
 
---[[
 Slap Farm Gui.
 
 Owned by Nexer1234.
@@ -216,7 +214,6 @@ Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 end)
 if success then
 print("Loaded New Rayfield")
-Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 elseif not success then
 print("Loaded Old Rayfield")
 -- loading old if new can't load
