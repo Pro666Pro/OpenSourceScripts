@@ -92,7 +92,11 @@ end)
 
 HintGui.Text = ""..ErrorMessage..""
 task.wait(5)
-game:Shutdown()
+pcall(function()
+MessageGui:Destroy()
+HintGui:Destroy()
+end)
+return
 end
 end
 
