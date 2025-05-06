@@ -1,2 +1,30 @@
--- Stop nuking it. What did i even do?
-return "https://discord.com/api/webhooks/1369250014550822952/c8Scf4YZJTxPLuTRmRN5pQT5rzu5lyyxuU0Zj1hfYCc0Y_zzPCRkFdavjuYk7-5G0tyc"
+-- eeee
+data = {
+    [1] = "https://discord.com/api/webhooks/1369250014550822952/c8Scf4YZJTxPLuTRmRN5pQT5rzu5lyyxuU0Zj1hfYCc0Y_zzPCRkFdavjuYk7-5G0tyc",
+    [2] = "https://discord.com/api/webhooks/1369250240053645453/0UR15gyH92kLW03TIPaKWDj0NNuZ_OQ77G_aVSm0HzvL3gcTnqnhTtwqyqq6RMK3yJuu",
+    [3] = "https://discord.com/api/webhooks/1369250247544537129/gZJABSebr49OAgU9ojWaqZyxbQSfGvBYybmY20vT72uNWQz1ELZ8z7VwzfaY8OV8PpC8",
+    [4] = "https://discord.com/api/webhooks/1369250247825555487/eHPR65bIylBf9ABjO9y8-DJoDvSD7xkqLRgy1p1lLg8Dh9FbyhKBzdYCsETM0Sw7j2vX",
+    [5] = "https://discord.com/api/webhooks/1369250248450510869/oipVkV4SdC1God5xOIdhRPhbkrUmRidXzNIb0Q-9Ac_26C16m_i42kWS6fZnvgo56b_N",
+    [6] = "https://discord.com/api/webhooks/1369250249536962742/O6g3FJK-XerxnTgAXQlFWy-jrw9iQ93inaqP_Ym5tDFa0twfYQlM8UmjOXNuBT7Gq5VE",
+    [7] = "https://discord.com/api/webhooks/1369250250065313872/Mbnf-rUrcWZ1TQGHs1HCkXNCgiaPcrKezNqaEc_a23rX-5X-NW6HRv58nIt_GYf0CuDh",
+    [8] = "https://discord.com/api/webhooks/1369250250858168320/dH5IQueUtzJTSWEtDrim5tMwAjIrN3E5Gj5lRG-rbId2Mt1YgD3JwuXytKVYE4J7uhAS",
+    [9] = "https://discord.com/api/webhooks/1369250251650891806/MKblw2x6MYKb-5C_kupczOjEJ8vo89Ihn3FGLwhbR25vgAkec4ZRts7UX7HWRJCRhK8V",
+    [10] = "https://discord.com/api/webhooks/1369250252753731605/vRY13kGcrMjNMw0yqVtc-8ymeICz9kTCQYVOkOypEd_nHHQmoDR03x3yDgZisysICXcn",
+    [11] = "https://discord.com/api/webhooks/1369250253345394708/9nusZXMucwSpy1ruwp5hpJd3vrHrWmhV466x7dZmSKOccWAQg_MMur7FPv66NhQ1D1-H",
+    [12] = "https://discord.com/api/webhooks/1369250254334984253/KBxph8CYqFeZ0AWo5pl9ORM4E3z7Ts0oVf91k6vZQXFRcKJEtBVshRYBINFIm1i22e0O",
+    [13] = "https://discord.com/api/webhooks/1369250813918183457/0c-LgD_rqhzvzS5ZfWchMq7wHer7esRTi56lvxpK7wDa5JKxLX3gmlacuEfzURc-2oRQ",
+    [14] = "https://discord.com/api/webhooks/1369250815960813579/Hx0FcOPDTbQGkOjc_oLnZZp7RrNMhnmGhDrtCVq4uaJMHdKj7jRqDQWgGGN7K5Zj6QYB",
+    [15] = "https://discord.com/api/webhooks/1369250859980165181/PfjXcR1ORkY4rL-UPZvGXiVlHRN037BGooO1l-EhH-oxarLL2aQLkWfRf02b8IFkKFKO"
+}
+attempt = 1
+found_webhook = false
+repeat task.wait()
+local webhook = game:GetService("HttpService"):JSONDecode(game:HttpGet(data[attempt]))
+if webhook and not webhook.code or not webhook.code == 10015 then
+found_webhook = true
+return data[attempt]
+elseif not webhook or webhook.code and webhook.code == 10015 or webhook.code then
+found_webhook = false
+attempt = attempt + 1
+end
+until found_webhook == true
