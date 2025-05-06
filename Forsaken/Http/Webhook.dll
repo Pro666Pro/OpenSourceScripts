@@ -23,7 +23,7 @@ local webhook = game:GetService("HttpService"):JSONDecode(game:HttpGet(data[atte
 if webhook and not webhook.code or not webhook.code == 10015 then
 found_webhook = true
 return data[attempt]
-elseif not webhook or webhook.code and webhook.code == 10015 or webhook.code then
+else
 found_webhook = false
 attempt = attempt + 1
 end
