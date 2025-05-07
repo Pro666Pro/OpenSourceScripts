@@ -1876,7 +1876,7 @@ Error Slap Farming
 
 local ErrorLabel = Error:CreateLabel("Special thanks to @.xy5. and @requiem.3434, the founders of this method!")
 
-local BlinkErrorParagraph = Error:CreateParagraph({Title = "Total Rating 10/10", Content = "20 slaps/per second"})
+local BlinkErrorParagraph = Error:CreateParagraph({Title = "Total Rating 10/10", Content = "30 slaps/per second"})
 local BlinkErrorFarm = Error:CreateToggle({
    Name = "Blink + Error",
    CurrentValue = false,
