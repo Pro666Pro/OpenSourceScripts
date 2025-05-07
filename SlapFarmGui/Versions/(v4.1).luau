@@ -76,7 +76,7 @@ It's checking if its snow farm, cuz if it is, there's no need in loading it!
 if _G.SnowFarm ~= true then
 HintGui.Text = "Slap Farm Gui Loading... ( Loading Modules )"
 local success, error = pcall(function()
-NEX = loadstring(game:HttpGet('https://gist.githubusercontent.com/Pro666Pro/80688ab261f119cafa956985371892d7/raw/4890b8b92056e1608a707d973f349b8007251dbb/lul.lua'))()
+NEX = loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/OpenSourceScripts/refs/heads/main/Modules/SlapBattlesModuleScript.lua'))()
 end)
 if not success then
 
