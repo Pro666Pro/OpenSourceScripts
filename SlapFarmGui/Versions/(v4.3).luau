@@ -40,7 +40,7 @@ HintGui.Text = "Slap Farm Gui Loading... ( Loading Variables & Functions )"
 --[[
 Global variables ( and some functions ). The link to script is required for snow farming.
 ]]--
-_G.VerVerVer = "4.1" -- Version here
+_G.VerVerVer = "4.3" -- Version here
 _G.Link = "https://raw.githubusercontent.com/Pro666Pro/OpenSourceScripts/refs/heads/main/SlapFarmGui/Versions/(v4.3).luau" -- Or whatever your link is, this is required for snow farm and other serverhop farms
 _G.IsUserPremium = false -- This is responsible for whether the user has a premium or not, don't change it bucko 🤠
 _G.CanSlap = true -- Can slap? ( Bot Mode, Don't set false or bot won't be able to slap :[ )
