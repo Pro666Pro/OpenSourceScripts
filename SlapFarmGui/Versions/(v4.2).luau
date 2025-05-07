@@ -2300,6 +2300,15 @@ end)
    end,
 })
 
+local MoreButtonsUI = Other:CreateButton({
+   Name = "Load More Top-Bar Buttons",
+   Callback = function()
+pcall(function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Pro666Pro/OpenSourceScripts/refs/heads/main/UI/MoreButtons.luau"))()
+end)
+   end,
+})
+
 local CloseHubButton = Other:CreateButton({
    Name = "Close Gui",
    Callback = function()
