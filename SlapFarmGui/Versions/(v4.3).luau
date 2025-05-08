@@ -400,14 +400,14 @@ if _G.DarkRealmFarm == true then
 
 -- Yes i know i could've just take glove name from leaderstats, please stop talking about it
 
-if Players.LocalPlayer.Backpack:FindFirstChildWhichIsA("Tool") then
-for i,v in pairs(Players.LocalPlayer.Backpack:GetChildren()) do
+if game.Players.LocalPlayer.Backpack:FindFirstChildWhichIsA("Tool") then
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 if v and v:IsA("Tool") and v.ClassName == "Tool" then
 _G.Glove = v.Name
 end
 end
-elseif Players.LocalPlayer.Character:FindFirstChildWhichIsA("Tool") then
-for i,v in pairs(Players.LocalPlayer.Character:GetChildren()) do
+elseif game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Tool") then
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
 if v and v:IsA("Tool") and v.ClassName == "Tool" then
 _G.Glove = v.Name
 end
