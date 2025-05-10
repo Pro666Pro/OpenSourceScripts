@@ -46,3 +46,6 @@ ModuleScript:Slap(args, mode) -- Slaps { literally }
 Example: ModuleScript:Slap({[1]=game.Players.LocalPlayer.Character.HumanoidRootPart;[2]=true;})
 
 ModuleScript:SetDB(boolval) -- Sets death barrier mode ( false is disable and true is enable )
+
+ModuleScript.Spawn(NPC) -- Spawns npc
+Example: ModuleScript.Spawn("Blink") or ModuleScript.Spawn("Replica") or ModuleScript.Spawn("Baller")
