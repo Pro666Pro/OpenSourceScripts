@@ -1,4 +1,4 @@
-digit1 = 35876840 -- from id (number)
+digit1 = math.random(35500000,35970000) -- from id (number)
 digit2 = 35976860 -- up to id (number)
 StopAfterFindingOwnerlessGroup = false -- Set false if no
 
