@@ -117,25 +117,6 @@ pcall(function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/BypassAntiCheat/main/main.lua'))()
 end)
 
-
--- notification function
-function notify(title, content, time, mode)
-time = time or 10
-mode = mode or false
-if mode == true then
-img = 136186846844342
-elseif mode == false then
-img = 71508738660632
-end
-Rayfield:Notify({
-	Title = title,
-	Content = content,
-	Duration = time,
-	Image = img,
-	Actions = {},
-})
-end
-
 -- turn table to string. nexer edition 😎 ( ttostring --> tabletostring )
 function ttostring(tbl)
     if type(tbl) == "table" then
@@ -364,7 +345,6 @@ local HWID = game:GetService("RbxAnalyticsService"):GetClientId()
 _G.Premium = _G.IsUserPremium
 for i,v in pairs(HWIDList) do
   if v == HWID or game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId,1095975745) then
-notify("Whitelisted!", "Thanks For Supporting!", 10, true)
       _G.IsUserPremium = true
       _G.Premium = _G.IsUserPremium
 break
@@ -3789,7 +3769,7 @@ MasteryGamepass:AddButton({
 	Name = "Buy Mastery Helper",
 	Callback = function()
 
-if game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId,1095975745) then
+if _G.Premium == true or game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId,1095975745) then
     OrionLib:MakeNotification({Name = "Error",Content = "Arleady Own Gamepass!",Image = "rbxthumb://type=Asset&id=119832194558748&w=150&h=150",Time = 5})
 else
     setclipboard(tostring("https://www.roblox.com/game-pass/1095975745"))
