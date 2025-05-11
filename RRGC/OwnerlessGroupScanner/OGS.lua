@@ -28,7 +28,7 @@ end)
 if not a then
 group = nil
 end
-if group and group.owner and group.owner == null or group.owner == nil and group.publicEntryAllowed and group.publicEntryAllowed == true then
+if group and group.owner and group.owner == nil and group.publicEntryAllowed and group.publicEntryAllowed == true then
 totalownerlessgroupsfound = totalownerlessgroupsfound + 1
 hint.Text = "Found Ownerless Group. Copied link to clipboard! ( Group Link: "..currentnumber.." : Total Groups Found: "..totalownerlessgroupsfound.." )"
 setclipboard(tostring("https://www.roblox.com/communities/"..currentnumber))
@@ -41,9 +41,9 @@ if not group then
 hint.Text = "Failed accessing group. Attempt: "..total.."/"..possiblecomb.." ( Group Id: "..currentnumber.." : Total Groups Found: "..totalownerlessgroupsfound.." )"
 elseif group and not group.owner then
 hint.Text = "Failed accessing group owner. Attempt: "..total.."/"..possiblecomb.." ( Group Id: "..currentnumber.." : Total Groups Found: "..totalownerlessgroupsfound.." )"
-elseif group and group.owner and group.owner ~= null or group.owner ~= nil then
+elseif group and group.owner and group.owner ~= nil then
 hint.Text = "Group has owner. Attempt: "..total.."/"..possiblecomb.." ( Group Id: "..currentnumber.." : Total Groups Found: "..totalownerlessgroupsfound.." )"
-elseif group and group.owner and group.owner == null or group.owner == nil and group.publicEntryAllowed and group.publicEntryAllowed == false then
+elseif group and group.owner and group.owner == nil and group.publicEntryAllowed and group.publicEntryAllowed == false then
 hint.Text = "Group is locked. Attempt: "..total.."/"..possiblecomb.." ( Group Id: "..currentnumber.." : Total Groups Found: "..totalownerlessgroupsfound.." )"
 end
 end
