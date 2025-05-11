@@ -1,6 +1,6 @@
-digit1 = 34000000 -- from id (number)
-digit2 = 35980000 -- up to id (number)
-StopAfterFindingOwnerlessGroup = true -- Set false if no
+digit1 = 35876840 -- from id (number)
+digit2 = 35976860 -- up to id (number)
+StopAfterFindingOwnerlessGroup = false -- Set false if no
 
 
 
@@ -11,6 +11,7 @@ StopAfterFindingOwnerlessGroup = true -- Set false if no
 
 stop = false
 currentnumber = tonumber(digit1) - 1
+totalownerlessgroupsfound = 0
 scanning = "https://groups.roblox.com/v1/groups/"..currentnumber
 total = 0
 possiblecomb = tonumber(digit2) - tonumber(digit1)
@@ -29,7 +30,8 @@ if not a then
 group = nil
 end
 if group and group.owner and group.owner == null or group.owner == nil and group.publicEntryAllowed and group.publicEntryAllowed == true then
-hint.Text = "Found Ownerless Group. Copied id to clipboard! ( Group Link: "..currentnumber.." )"
+totalownerlessgroupsfound = totalownerlessgroupsfound + 1
+hint.Text = "Found Ownerless Group. Copied id to clipboard! ( Group Link: "..currentnumber.." : Total Groups Found: "..totalownerlessgroupsfound.." )"
 setclipboard(tostring(currentnumber))
 if StopAfterFindingOwnerlessGroup == true then
 stop = true
@@ -37,13 +39,13 @@ break
 end
 else
 if not group then
-hint.Text = "Failed accessing group. Attempt: "..total.."/"..possiblecomb.." ( Group Id: "..currentnumber.." )"
+hint.Text = "Failed accessing group. Attempt: "..total.."/"..possiblecomb.." ( Group Id: "..currentnumber.." : Total Groups Found: "..totalownerlessgroupsfound.." )"
 elseif group and not group.owner then
-hint.Text = "Failed accessing group owner. Attempt: "..total.."/"..possiblecomb.." ( Group Id: "..currentnumber.." )"
+hint.Text = "Failed accessing group owner. Attempt: "..total.."/"..possiblecomb.." ( Group Id: "..currentnumber.." : Total Groups Found: "..totalownerlessgroupsfound.." )"
 elseif group and group.owner and group.owner ~= null or group.owner ~= nil then
-hint.Text = "Group has owner. Attempt: "..total.."/"..possiblecomb.." ( Group Id: "..currentnumber.." )"
+hint.Text = "Group has owner. Attempt: "..total.."/"..possiblecomb.." ( Group Id: "..currentnumber.." : Total Groups Found: "..totalownerlessgroupsfound.." )"
 elseif group and group.owner and group.owner == null or group.owner == nil and group.publicEntryAllowed and group.publicEntryAllowed == false then
-hint.Text = "Group is locked. Attempt: "..total.."/"..possiblecomb.." ( Group Id: "..currentnumber.." )"
+hint.Text = "Group is locked. Attempt: "..total.."/"..possiblecomb.." ( Group Id: "..currentnumber.." : Total Groups Found: "..totalownerlessgroupsfound.." )"
 end
 end
 else
