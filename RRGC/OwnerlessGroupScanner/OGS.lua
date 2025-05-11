@@ -1,4 +1,4 @@
-digit1 = 35491298 -- from id (number)
+digit1 = 35496298 -- from id (number)
 digit2 = 35959485 -- up to id (number)
 
 stop = false
@@ -15,22 +15,27 @@ total = total + 1
 currentnumber = currentnumber + 1
 if currentnumber ~= tonumber(digit2) then
 scanning = "https://groups.roproxy.com/v1/groups/"..currentnumber
+local a,b = pcall(function()
 group = game:GetService("HttpService"):JSONDecode(game:HttpGet(scanning))
+end)
+if not a then
+group = nil
+end
 
-if group and group.memberCount and group.memberCount == 0 and group.publicEntryAllowed and group.publicEntryAllowed == true then
+if group and group.owner and group.owner == null and group.publicEntryAllowed and group.publicEntryAllowed == true then
 stop = true
 hint.Text = "Found Ownerless Group. Copied id to clipboard! ( Group Link: "..currentnumber.." )"
 setclipboard(tostring(currentnumber))
 else
 
 if not group then
-hint.Text = "Failed accessing group. Attempt: "..total.."/"..possiblecomb.." ( Group Link: "..currentnumber.." )"
-elseif group and not group.memberCount then
-hint.Text = "Failed accessing group member count. Attempt: "..total.."/"..possiblecomb.." ( Group Link: "..currentnumber.." )"
-elseif group and group.memberCount and group.memberCount ~= 0 then
-hint.Text = "Group has owner. Attempt: "..total.."/"..possiblecomb.." ( Group Link: "..currentnumber.." )"
-elseif group and group.memberCount and group.memberCount == 0 and group.publicEntryAllowed and group.publicEntryAllowed == false then
-hint.Text = "Group is locked. Attempt: "..total.."/"..possiblecomb.." ( Group Link: "..currentnumber.." )"
+hint.Text = "Failed accessing group. Attempt: "..total.."/"..possiblecomb.." ( Group Id: "..currentnumber.." )"
+elseif group and not group.owner then
+hint.Text = "Failed accessing group owner. Attempt: "..total.."/"..possiblecomb.." ( Group Id: "..currentnumber.." )"
+elseif group and group.owner and group.owner ~= null then
+hint.Text = "Group has owner. Attempt: "..total.."/"..possiblecomb.." ( Group Id: "..currentnumber.." )"
+elseif group and group.owner and group.owner == null and group.publicEntryAllowed and group.publicEntryAllowed == false then
+hint.Text = "Group is locked. Attempt: "..total.."/"..possiblecomb.." ( Group Id: "..currentnumber.." )"
 end
 
 end
