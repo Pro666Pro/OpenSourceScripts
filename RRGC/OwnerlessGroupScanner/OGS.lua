@@ -1,5 +1,5 @@
-digit1 = 35976840 -- from id (number)
-digit2 = 35976860 -- up to id (number)
+digit1 = 34000000 -- from id (number)
+digit2 = 35980000 -- up to id (number)
 StopAfterFindingOwnerlessGroup = true -- Set false if no
 
 
