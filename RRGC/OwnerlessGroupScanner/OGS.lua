@@ -8,7 +8,6 @@ StopAfterFindingOwnerlessGroup = false -- Set false if no
 
 
 
-
 stop = false
 currentnumber = tonumber(digit1) - 1
 totalownerlessgroupsfound = 0
@@ -31,8 +30,8 @@ group = nil
 end
 if group and group.owner and group.owner == null or group.owner == nil and group.publicEntryAllowed and group.publicEntryAllowed == true then
 totalownerlessgroupsfound = totalownerlessgroupsfound + 1
-hint.Text = "Found Ownerless Group. Copied id to clipboard! ( Group Link: "..currentnumber.." : Total Groups Found: "..totalownerlessgroupsfound.." )"
-setclipboard(tostring(currentnumber))
+hint.Text = "Found Ownerless Group. Copied link to clipboard! ( Group Link: "..currentnumber.." : Total Groups Found: "..totalownerlessgroupsfound.." )"
+setclipboard(tostring("https://www.roblox.com/communities/"..currentnumber))
 if StopAfterFindingOwnerlessGroup == true then
 stop = true
 break
