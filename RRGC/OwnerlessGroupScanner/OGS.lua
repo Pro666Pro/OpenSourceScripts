@@ -1,4 +1,4 @@
-digit1 = 32491298 -- from id (number)
+digit1 = 35491298 -- from id (number)
 digit2 = 35959485 -- up to id (number)
 
 stop = false
@@ -14,7 +14,7 @@ repeat task.wait()
 total = total + 1
 currentnumber = currentnumber + 1
 if currentnumber ~= tonumber(digit2) then
-scanning = "https://groups.roblox.com/v1/groups/"..currentnumber
+scanning = "https://groups.roproxy.com/v1/groups/"..currentnumber
 group = game:GetService("HttpService"):JSONDecode(game:HttpGet(scanning))
 
 if group and group.memberCount and group.memberCount == 0 and group.publicEntryAllowed and group.publicEntryAllowed == true then
