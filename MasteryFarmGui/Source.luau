@@ -61,6 +61,11 @@ end
 end
 end
 
+function FakeMastery(GloveName)
+hookfunction(require(game.ReplicatedFirst.Dependencies.GloveMasteryClient).IsMasteredVersionEnabled, function(self, glove)
+    return glove == GloveName
+end)
+end
 
 --[[
 Loading module-script. This is absolutely required, or else script will fcking explode! ( script won't work )
