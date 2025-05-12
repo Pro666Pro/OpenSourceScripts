@@ -8,10 +8,10 @@ errorlog = "nil"
 
 function UpdateHint()
 if game:GetService("CoreGui"):FindFirstChild("wkiafnufjasfsafsaf") then
-if errorlog then
-game:GetService("CoreGui"):FindFirstChild("wkiafnufjasfsafsaf").Text = "Total Attempts = "..totalattempts.." | Checking Group ID = "..currentid.." | Status = "..errorlog..""
-elseif gencompleted == true then
+if gencompleted == true then
 game:GetService("CoreGui"):FindFirstChild("wkiafnufjasfsafsaf").Text = "Generation is completed! Total Attempts = "..totalattempts..""
+elseif errorlog then
+game:GetService("CoreGui"):FindFirstChild("wkiafnufjasfsafsaf").Text = "Total Attempts = "..totalattempts.." | Checking Group ID = "..currentid.." | Status = "..errorlog..""
 else
 game:GetService("CoreGui"):FindFirstChild("wkiafnufjasfsafsaf").Text = "Total Attempts = "..totalattempts.." | Checking Group ID = "..currentid.." | Status = "..errorlog..""
 end
