@@ -1,6 +1,6 @@
 Ezz = Instance.new("Message")
 Ezz.Name = "sffsfsfsfsfsfs"
-Ezz.Text = "Version 5.0 ( You can downgrade using github )"
+Ezz.Text = "Version 6.0 ( You can downgrade using github )"
 Ezz.Parent = game:GetService("CoreGui")
 task.wait(1)
 Ezz:Destroy()
@@ -234,7 +234,7 @@ errorlog = "Fail"; UpdateHint()
 return false
 end
 if zx == 1 then
-if group and not group.code and not group.errors and group.memberCount ~= nil and group.memberCount == 0 and group.id ~= nil and not table.find(arleadyexists, group.id) then
+if group and not group.code and not group.isLocked and not group.errors and group.memberCount ~= nil and group.memberCount == 0 and group.id ~= nil and not table.find(arleadyexists, group.id) then
 errorlog = "Success"; UpdateHint()
 table.insert(arleadyexists, group.id)
 return "https://www.roblox.com/communities/"..id..""
@@ -243,7 +243,7 @@ errorlog = "Fail"; UpdateHint()
 return false
 end
 elseif zx == 2 then
-if group and not group.code and not group.errors and group.owner == null or group.owner == nil and group.id ~= nil and not table.find(arleadyexists, group.id) then
+if group and not group.code and not group.isLocked and not group.errors and group.owner == null or group.owner == nil and group.id ~= nil and not table.find(arleadyexists, group.id) then
 errorlog = "Success"; UpdateHint()
 table.insert(arleadyexists, group.id)
 return "https://www.roblox.com/communities/"..id..""
@@ -253,7 +253,7 @@ return false
 end
 elseif zx == 3 then
 if group and not group.code and not group.errors and group.owner == null or group.owner == nil and group.publicEntryAllowed and group.publicEntryAllowed == true and group.publicEntryAllowed ~= false and group.id ~= nil and not table.find(arleadyexists, group.id) then
-if group.publicEntryAllowed and group.publicEntryAllowed == true and group.publicEntryAllowed ~= false then
+if group.publicEntryAllowed and group.publicEntryAllowed == true and group.publicEntryAllowed ~= false and not group.isLocked then
 errorlog = "Success"; UpdateHint()
 table.insert(arleadyexists, group.id)
 return "https://www.roblox.com/communities/"..id..""
@@ -267,7 +267,7 @@ return false
 end
 elseif zx == 4 then
 if group and not group.code and not group.errors and group.memberCount ~= nil and group.memberCount == 0 and group.publicEntryAllowed and group.publicEntryAllowed == true and group.publicEntryAllowed ~= false and group.id ~= nil and not table.find(arleadyexists, group.id) then
-if group.publicEntryAllowed and group.publicEntryAllowed == true and group.publicEntryAllowed ~= false then
+if group.publicEntryAllowed and group.publicEntryAllowed == true and group.publicEntryAllowed ~= false and not group.isLocked then
 errorlog = "Success"; UpdateHint()
 table.insert(arleadyexists, group.id)
 return "https://www.roblox.com/communities/"..id..""
@@ -281,7 +281,7 @@ return false
 end
 elseif zx == 5 then
 if group and not group.code and not group.errors and group.memberCount ~= nil and group.memberCount == 0 and group.publicEntryAllowed and group.publicEntryAllowed == true and group.publicEntryAllowed ~= false and group.owner == null or group.owner == nil and group.id ~= nil and not table.find(arleadyexists, group.id) then
-if group.publicEntryAllowed and group.publicEntryAllowed == true and group.publicEntryAllowed ~= false then
+if group.publicEntryAllowed and group.publicEntryAllowed == true and group.publicEntryAllowed ~= false and not group.isLocked then
 errorlog = "Success"; UpdateHint()
 table.insert(arleadyexists, group.id)
 return "https://www.roblox.com/communities/"..id..""
