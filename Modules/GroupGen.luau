@@ -1,6 +1,6 @@
 Ezz = Instance.new("Message")
 Ezz.Name = "sffsfsfsfsfsfs"
-Ezz.Text = "Version 2.9 ( You can downgrade using github )"
+Ezz.Text = "Version 3.0 ( You can downgrade using github )"
 Ezz.Parent = game:GetService("CoreGui")
 task.wait(1)
 Ezz:Destroy()
@@ -293,7 +293,7 @@ quan = Quantity or 1
 bulk = {}
 MSG = ReloadNiceMessage()
 for i = 1, quan do
-MSG.Text = "Generating... "..i.."/"..quan..""
+MSG.Text = "Generating... "..i.."/"..quan.."" or "Generating... 0/"..quan..""
 repeat task.wait()
 generated = GenerateGroup(dat, met)
 if generated == false then
