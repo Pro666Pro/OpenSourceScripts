@@ -203,6 +203,9 @@ setclipboard(tocopy)
 MSG.Text = "Generated and copied!"
 task.wait(5)
 MSG:Destroy()
+if HINT then
+HINT:Destroy()
+end
 end
 
 return ModScr
