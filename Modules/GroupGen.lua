@@ -5,7 +5,7 @@ currentid = 0
 HINT = nil
 function ModScr:LogMode(boolval)
 boolval = boolval or false
-if boolval == false then return end
+if boolval == false then return
 elseif boolval == true then
 HINT = Instance.new("Hint")
 HINT.Name = "GeneratorLog"
