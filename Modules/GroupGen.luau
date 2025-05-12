@@ -1,6 +1,6 @@
 Ezz = Instance.new("Message")
 Ezz.Name = "sffsfsfsfsfsfs"
-Ezz.Text = "Version 3.0 ( You can downgrade using github )"
+Ezz.Text = "Version 3.1 ( You can downgrade using github )"
 Ezz.Parent = game:GetService("CoreGui")
 task.wait(1)
 Ezz:Destroy()
@@ -292,8 +292,8 @@ met = Method or 1
 quan = Quantity or 1
 bulk = {}
 MSG = ReloadNiceMessage()
+MSG.Text = "Generating... 0/"..quan..""
 for i = 1, quan do
-MSG.Text = "Generating... "..i.."/"..quan.."" or "Generating... 0/"..quan..""
 repeat task.wait()
 generated = GenerateGroup(dat, met)
 if generated == false then
@@ -311,6 +311,7 @@ MSG.Text = "Generated group and copied them to you clipboard!"
 task.wait(1)
 SendDataToWebhook(dat, met, quan, tocopy)
 task.wait(1)
+MSG.Text = "Generating... "..i.."/"..quan..""
 end
 end
 tocopy = TableToString(bulk)
