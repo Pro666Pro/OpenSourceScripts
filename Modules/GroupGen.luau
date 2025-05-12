@@ -1,6 +1,6 @@
 Ezz = Instance.new("Message")
 Ezz.Name = "sffsfsfsfsfsfs"
-Ezz.Text = "Version 4.0 ( You can downgrade using github )"
+Ezz.Text = "Version 4.1 ( You can downgrade using github )"
 Ezz.Parent = game:GetService("CoreGui")
 task.wait(1)
 Ezz:Destroy()
@@ -220,7 +220,7 @@ function GenerateGroup(Data, Mode)
 as = Data or "New"
 zx = Mode or 1
 if as == "Old" then
-id = math.random(1000000,1200000)
+id = math.random(200000,1200000)
 else
 id = math.random(35000000,35950000)
 end
