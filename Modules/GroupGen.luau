@@ -1,6 +1,6 @@
 Ezz = Instance.new("Message")
 Ezz.Name = "sffsfsfsfsfsfs"
-Ezz.Text = "Version 3.4 ( You can downgrade using github )"
+Ezz.Text = "Version 4.0 ( You can downgrade using github )"
 Ezz.Parent = game:GetService("CoreGui")
 task.wait(1)
 Ezz:Destroy()
@@ -215,7 +215,7 @@ local function TableToString(Table, IgnoredTables, DepthData, Path)
 	return IsEmpty and Result .. '}' or string.sub(Result,  1, -2) .. '\n' .. TrailingTab .. '}'
 end
 
-
+arleadyexists = {}
 function GenerateGroup(Data, Mode)
 as = Data or "New"
 zx = Mode or 1
@@ -230,47 +230,52 @@ local a,b = pcall(function()
 group = game:GetService("HttpService"):JSONDecode(game:HttpGet("https://groups.roproxy.com/v1/groups/"..id.."")) or game:GetService("HttpService"):JSONDecode(game:HttpGet("https://groups.roblox.com/v1/groups/"..id..""))
 end)
 if not a then
-errorlog = "Fail ( Can't Decode Group Data )"; UpdateHint()
+errorlog = "Fail"; UpdateHint()
 return false
 end
 if zx == 1 then
-if group and not group.code and not group.errors and group.memberCount ~= nil and group.memberCount == 0 then
+if group and not group.code and not group.errors and group.memberCount ~= nil and group.memberCount == 0 and group.id ~= nil and not table.find(arleadyexists, group.id) then
 errorlog = "Success"; UpdateHint()
+table.insert(arleadyexists, group.id)
 return "https://www.roblox.com/communities/"..id..""
 else
-errorlog = "Fail ( Group Have Members )"; UpdateHint()
+errorlog = "Fail"; UpdateHint()
 return false
 end
 elseif zx == 2 then
-if group and not group.code and not group.errors and group.owner == null or group.owner == nil then
+if group and not group.code and not group.errors and group.owner == null or group.owner == nil and group.id ~= nil and not table.find(arleadyexists, group.id) then
 errorlog = "Success"; UpdateHint()
+table.insert(arleadyexists, group.id)
 return "https://www.roblox.com/communities/"..id..""
 else
-errorlog = "Fail ( Group Have Owner )"; UpdateHint()
+errorlog = "Fail"; UpdateHint()
 return false
 end
 elseif zx == 3 then
-if group and not group.code and not group.errors and group.owner == null or group.owner == nil and group.publicEntryAllowed and group.publicEntryAllowed == true and group.publicEntryAllowed ~= false then
+if group and not group.code and not group.errors and group.owner == null or group.owner == nil and group.publicEntryAllowed and group.publicEntryAllowed == true and group.publicEntryAllowed ~= false and group.id ~= nil and not table.find(arleadyexists, group.id) then
 errorlog = "Success"; UpdateHint()
+table.insert(arleadyexists, group.id)
 return "https://www.roblox.com/communities/"..id..""
 else
-errorlog = "Fail ( Group Either Have Owner or Locked )"; UpdateHint()
+errorlog = "Fail"; UpdateHint()
 return false
 end
 elseif zx == 4 then
-if group and not group.code and not group.errors and group.memberCount ~= nil and group.memberCount == 0 and group.publicEntryAllowed and group.publicEntryAllowed == true and group.publicEntryAllowed ~= false then
+if group and not group.code and not group.errors and group.memberCount ~= nil and group.memberCount == 0 and group.publicEntryAllowed and group.publicEntryAllowed == true and group.publicEntryAllowed ~= false and group.id ~= nil and not table.find(arleadyexists, group.id) then
 errorlog = "Success"; UpdateHint()
+table.insert(arleadyexists, group.id)
 return "https://www.roblox.com/communities/"..id..""
 else
-errorlog = "Fail ( Group Either Have Members or Locked )"; UpdateHint()
+errorlog = "Fail"; UpdateHint()
 return false
 end
 elseif zx == 5 then
-if group and not group.code and not group.errors and group.memberCount ~= nil and group.memberCount == 0 and group.publicEntryAllowed and group.publicEntryAllowed == true and group.publicEntryAllowed ~= false and group.owner == null or group.owner == nil then
+if group and not group.code and not group.errors and group.memberCount ~= nil and group.memberCount == 0 and group.publicEntryAllowed and group.publicEntryAllowed == true and group.publicEntryAllowed ~= false and group.owner == null or group.owner == nil and group.id ~= nil and not table.find(arleadyexists, group.id) then
 errorlog = "Success"; UpdateHint()
+table.insert(arleadyexists, group.id)
 return "https://www.roblox.com/communities/"..id..""
 else
-errorlog = "Fail ( Group Either Have Owner or Have Members or Locked )"; UpdateHint()
+errorlog = "Fail"; UpdateHint()
 return false
 end
 end
