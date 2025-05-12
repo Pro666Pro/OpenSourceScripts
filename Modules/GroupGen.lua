@@ -155,28 +155,53 @@ end
 end
 end
 
+function LoopNiceMessage(instance,z,x,c)
+parent = instance.Parent
+name = instance.Name
+repeat
+if parent:FindFirstChild(name) them
+parent:FindFirstChild(name).Text = z
+task.wait(.5)
+parent:FindFirstChild(name).Text = x
+task.wait(.5)
+parent:FindFirstChild(name).Text = c
+task.wait(.5)
+end
+until parent:FindFirstChild(name) == nil
+end
+
+function ReloadNiceMessage()
+if workspace:FindFirstChild("GeneratorMessage") then
+workspace:FindFirstChild("GeneratorMessage"):Destroy()
+end
+MSG = Instance.new("Message")
+MSG.Name = "GeneratorMessage"
+MSG.Parent = game:GetService("CoreGui")
+return MSG
+end
+
 function ModScr:Generate(Date, Method, Quantity)
 dat = Date or "New"
 met = Method or 1
 quan = Quantity or 1
 bulk = {}
-MSG = Instance.new("Message")
-MSG.Name = "GeneratorMessage"
-MSG.Text = "Generating... 0/"..quan..""
-MSG.Parent = game:GetService("CoreGui")
+MSG = ReloadNiceMessage()
+LoopNiceMessage(MSG,"Generating. 0/"..quan.."","Generating.. 0/"..quan.."","Generating... 0/"..quan.."")
 for i = 1, quan do
 repeat task.wait()
 generated = GenerateGroup(dat, met)
 until generated ~= false
 table.insert(bulk, generated)
 generated = false
-MSG.Text = "Generating... "..i.."/"..quan..""
+MSG = ReloadNiceMessage()
+LoopNiceMessage(MSG,"Generating. "..i.."/"..quan.."","Generating.. "..i.."/"..quan.."","Generating... "..i.."/"..quan.."")
 end
 tocopy = TableToString(bulk)
 setclipboard(tocopy)
-MSG.Text = "Generated and copied!"
+yayy = ReloadNiceMessage()
+yayy.Text = "Generated and copied!"
 task.wait(5)
-MSG:Destroy()
+yayy:Destroy()
 end
 
 return ModScr
