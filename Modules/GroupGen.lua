@@ -162,7 +162,7 @@ quan = Quantity or 1
 bulk = {}
 MSG = Instance.new("Message")
 MSG.Name = "GeneratorMessage"
-MSG.Text = "Generating... 0/"..GroupsQuantity..""
+MSG.Text = "Generating... 0/"..quan..""
 MSG.Parent = game:GetService("CoreGui")
 for i = 1, quan do
 repeat task.wait()
@@ -170,7 +170,7 @@ generated = GenerateGroup(dat, met)
 until generated ~= false
 table.insert(bulk, generated)
 generated = false
-MSG.Text = "Generating... "..i.."/"..GroupsQuantity..""
+MSG.Text = "Generating... "..i.."/"..quan..""
 end
 tocopy = TableToString(bulk)
 setclipboard(tocopy)
