@@ -1,6 +1,6 @@
 Ezz = Instance.new("Message")
 Ezz.Name = "sffsfsfsfsfsfs"
-Ezz.Text = "Version 2.7 ( You can downgrade using github )"
+Ezz.Text = "Version 2.8 ( You can downgrade using github )"
 Ezz.Parent = game:GetService("CoreGui")
 task.wait(1)
 Ezz:Destroy()
