@@ -12,6 +12,7 @@ HINT = Instance.new("Hint")
 HINT.Name = "GeneratorLog"
 HINT.Text = "Loading"
 HINT.Parent = game:GetService("CoreGui")
+task.delay(0.005, function()
 repeat task.wait()
 if game:GetService("CoreGui"):FindFirstChild("GeneratorLog") then
 if gencompleted == true then
@@ -21,6 +22,7 @@ game:GetService("CoreGui"):FindFirstChild("GeneratorLog").Text = "Total Attempts
 end
 end
 until game:GetService("CoreGui"):FindFirstChild("GeneratorLog") == nil
+end)
 end
 end
 
