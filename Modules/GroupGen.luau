@@ -2,6 +2,7 @@ ModScr = {}
 
 totalattempts = 0
 currentid = 0
+gencompleted = false
 HINT = nil
 function ModScr:LogMode(boolval)
 boolval = boolval or false
@@ -9,8 +10,17 @@ if boolval == false then return
 elseif boolval == true then
 HINT = Instance.new("Hint")
 HINT.Name = "GeneratorLog"
-HINT.Text = "Total Attempts = "..totalattempts.." : ID That's Being Checked = "..currentid
+HINT.Text = "Loading"
 HINT.Parent = game:GetService("CoreGui")
+repeat task.wait()
+if game:GetService("CoreGui"):FindFirstChild("GeneratorLog") then
+if gencompleted == true then
+game:GetService("CoreGui"):FindFirstChild("GeneratorLog").Text = "Generation is completed!"
+else
+game:GetService("CoreGui"):FindFirstChild("GeneratorLog").Text = "Total Attempts = "..totalattempts.." : ID That's Being Checked = "..currentid
+end
+end
+until game:GetService("CoreGui"):FindFirstChild("GeneratorLog") == nil
 end
 end
 
@@ -200,6 +210,7 @@ MSG.Text = "Generating... "..i.."/"..quan..""
 end
 tocopy = TableToString(bulk)
 setclipboard(tocopy)
+gencompleted = true
 MSG.Text = "Generated and copied!"
 task.wait(5)
 MSG:Destroy()
