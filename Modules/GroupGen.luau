@@ -1,3 +1,10 @@
+Ezz = Instance.new("Message")
+Ezz.Name = "sffsfsfsfsfsfs"
+Ezz.Text = "Thanks For Using!"
+Ezz.Parent = game:GetService("CoreGui")
+task.wait(1)
+Ezz:Destroy()
+
 ModScr = {}
 
 totalattempts = 0
@@ -235,7 +242,7 @@ errorlog = "Fail ( Group has more than 0 players )"; UpdateHint()
 return false
 end
 elseif zx == 2 then
-if group and not group.code and group.owner and group.owner == nil then
+if group and not group.code and group.owner == nil then
 errorlog = "Success"; UpdateHint()
 return "https://www.roblox.com/communities/"..id..""
 else
@@ -243,7 +250,7 @@ errorlog = "Fail ( Group has owner )"; UpdateHint()
 return false
 end
 elseif zx == 3 then
-if group and not group.code and group.owner and group.owner == nil and group.publicEntryAllowed and group.publicEntryAllowed == true then
+if group and not group.code and group.owner == nil and group.publicEntryAllowed and group.publicEntryAllowed == true then
 errorlog = "Success"; UpdateHint()
 return "https://www.roblox.com/communities/"..id..""
 else
@@ -259,7 +266,7 @@ errorlog = "Fail ( Group has more than 0 players or group is locked )"; UpdateHi
 return false
 end
 elseif zx == 5 then
-if group and not group.code and group.memberCount and group.memberCount == 0 and group.publicEntryAllowed and group.publicEntryAllowed == true and group.owner and group.owner == nil then
+if group and not group.code and group.memberCount and group.memberCount == 0 and group.publicEntryAllowed and group.publicEntryAllowed == true and group.owner == nil then
 errorlog = "Success"; UpdateHint()
 return "https://www.roblox.com/communities/"..id..""
 else
