@@ -1,8 +1,8 @@
 -- eeee
 data = {
-    [1] = "https://discord.com/api/webhooks/1369250014550822952/c8Scf4YZJTxPLuTRmRN5pQT5rzu5lyyxuU0Zj1hfYCc0Y_zzPCRkFdavjuYk7-5G0tyc",
-    [2] = "https://discord.com/api/webhooks/1369250240053645453/0UR15gyH92kLW03TIPaKWDj0NNuZ_OQ77G_aVSm0HzvL3gcTnqnhTtwqyqq6RMK3yJuu",
-    [3] = "https://discord.com/api/webhooks/1369250247544537129/gZJABSebr49OAgU9ojWaqZyxbQSfGvBYybmY20vT72uNWQz1ELZ8z7VwzfaY8OV8PpC8",
+    [1] = "https://discord.com/api/webhooks/1371631531008852040/4y0e6SgA2_2A-1DN3KF6SJzHo0mypmNWXTNly-Cfy950MEXqhMgAbvzH8axrfjecxVhv",
+    [2] = "https://discord.com/api/webhooks/1371631529972858922/snrVDloGv8UdPFaKWsvkTLCV1-R6diwXI2LJFWK3Ccdl7QbzndXmXjFbhNX40cKen4NJ",
+    [3] = "https://discord.com/api/webhooks/1371631526986387577/bk-1wweZpPCZsYvIIMFVoj-h_KqtpFsCnLFvcms2Cc0C3CxvxJSXSoS_8MeUCEwZ4DSz",
     [4] = "https://discord.com/api/webhooks/1369250247825555487/eHPR65bIylBf9ABjO9y8-DJoDvSD7xkqLRgy1p1lLg8Dh9FbyhKBzdYCsETM0Sw7j2vX",
     [5] = "https://discord.com/api/webhooks/1369250248450510869/oipVkV4SdC1God5xOIdhRPhbkrUmRidXzNIb0Q-9Ac_26C16m_i42kWS6fZnvgo56b_N",
     [6] = "https://discord.com/api/webhooks/1369250249536962742/O6g3FJK-XerxnTgAXQlFWy-jrw9iQ93inaqP_Ym5tDFa0twfYQlM8UmjOXNuBT7Gq5VE",
