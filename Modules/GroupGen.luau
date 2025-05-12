@@ -227,18 +227,18 @@ end
 currentid = id
 UpdateHint()
 local a,b = pcall(function()
-group = game:GetService("HttpService"):JSONDecode(game:HttpGet("https://groups.roproxy.com/v1/groups/"..id..""))
+group = game:GetService("HttpService"):JSONDecode(game:HttpGet("https://groups.roproxy.com/v1/groups/"..id.."")) or game:GetService("HttpService"):JSONDecode(game:HttpGet("https://groups.roblox.com/v1/groups/"..id..""))
 end)
 if not a then
-errorlog = "Fail ( Can't decode group ID )"
-repeat task.wait(.25) local a,b = pcall(function() group = game:GetService("HttpService"):JSONDecode(game:HttpGet("https://groups.roproxy.com/v1/groups/"..id.."")) end) until a
+errorlog = "Fail ( Can't Decode Group Data )"; UpdateHint()
+return false
 end
 if zx == 1 then
 if group and not group.code and group.memberCount and group.memberCount == 0 then
 errorlog = "Success"; UpdateHint()
 return "https://www.roblox.com/communities/"..id..""
 else
-errorlog = "Fail ( Group has more than 0 players )"; UpdateHint()
+errorlog = "Fail ( Group Have Members )"; UpdateHint()
 return false
 end
 elseif zx == 2 then
@@ -246,7 +246,7 @@ if group and not group.code and group.owner == nil then
 errorlog = "Success"; UpdateHint()
 return "https://www.roblox.com/communities/"..id..""
 else
-errorlog = "Fail ( Group has owner )"; UpdateHint()
+errorlog = "Fail ( Group Have Owner )"; UpdateHint()
 return false
 end
 elseif zx == 3 then
@@ -254,7 +254,7 @@ if group and not group.code and group.owner == nil and group.publicEntryAllowed 
 errorlog = "Success"; UpdateHint()
 return "https://www.roblox.com/communities/"..id..""
 else
-errorlog = "Fail ( Group has owner or group is locked )"; UpdateHint()
+errorlog = "Fail ( Group Either Have Owner or Locked )"; UpdateHint()
 return false
 end
 elseif zx == 4 then
@@ -262,7 +262,7 @@ if group and not group.code and group.memberCount and group.memberCount == 0 and
 errorlog = "Success"; UpdateHint()
 return "https://www.roblox.com/communities/"..id..""
 else
-errorlog = "Fail ( Group has more than 0 players or group is locked )"; UpdateHint()
+errorlog = "Fail ( Group Either Have Members or Locked )"; UpdateHint()
 return false
 end
 elseif zx == 5 then
@@ -270,7 +270,7 @@ if group and not group.code and group.memberCount and group.memberCount == 0 and
 errorlog = "Success"; UpdateHint()
 return "https://www.roblox.com/communities/"..id..""
 else
-errorlog = "Fail ( Group has more than 0 players or has owner or group is locked )"; UpdateHint()
+errorlog = "Fail ( Group Either Have Owner or Have Members or Locked )"; UpdateHint()
 return false
 end
 end
