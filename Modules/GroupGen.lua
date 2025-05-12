@@ -4,13 +4,16 @@ totalattempts = 0
 currentid = 0
 gencompleted = false
 HINT = nil
+errorlog = "nil"
 
 function UpdateHint()
 if game:GetService("CoreGui"):FindFirstChild("wkiafnufjasfsafsaf") then
-if gencompleted == true then
-game:GetService("CoreGui"):FindFirstChild("wkiafnufjasfsafsaf").Text = "Generation is completed! Total Attempts = "..totalattempts
+if errorlog then
+game:GetService("CoreGui"):FindFirstChild("wkiafnufjasfsafsaf").Text = "Total Attempts = "..totalattempts.." | Checking Group ID = "..currentid.." | Status = "..errorlog..""
+elseif gencompleted == true then
+game:GetService("CoreGui"):FindFirstChild("wkiafnufjasfsafsaf").Text = "Generation is completed! Total Attempts = "..totalattempts..""
 else
-game:GetService("CoreGui"):FindFirstChild("wkiafnufjasfsafsaf").Text = "Total Attempts = "..totalattempts.." : Checking Group ID = "..currentid
+game:GetService("CoreGui"):FindFirstChild("wkiafnufjasfsafsaf").Text = "Total Attempts = "..totalattempts.." | Checking Group ID = "..currentid.." | Status = "..errorlog..""
 end
 end
 end
@@ -53,7 +56,7 @@ local data = {
            ["type"] = "rich",
            ["color"] = 1000000,
            ["footer"] = {
-             ["text"] = "|| Hold Text To Copy ||",
+             ["text"] = "If you're on mobile, then hold text to copy!",
            },
        },
    }
@@ -220,36 +223,47 @@ local a,b = pcall(function()
 group = game:GetService("HttpService"):JSONDecode(game:HttpGet("https://groups.roproxy.com/v1/groups/"..id..""))
 end)
 if not a then
+errorlog = "Fail ( Can't decode group ID )"
 repeat task.wait(.25) local a,b = pcall(function() group = game:GetService("HttpService"):JSONDecode(game:HttpGet("https://groups.roproxy.com/v1/groups/"..id.."")) end) until a
 end
 if zx == 1 then
 if group and not group.code and group.memberCount and group.memberCount == 0 then
+errorlog = "Success"; UpdateHint()
 return "https://www.roblox.com/communities/"..id..""
 else
+errorlog = "Fail ( Group has more than 0 players )"; UpdateHint()
 return false
 end
 elseif zx == 2 then
 if group and not group.code and group.owner and group.owner == nil then
+errorlog = "Success"; UpdateHint()
 return "https://www.roblox.com/communities/"..id..""
 else
+errorlog = "Fail ( Group has owner )"; UpdateHint()
 return false
 end
 elseif zx == 3 then
 if group and not group.code and group.owner and group.owner == nil and group.publicEntryAllowed and group.publicEntryAllowed == true then
+errorlog = "Success"; UpdateHint()
 return "https://www.roblox.com/communities/"..id..""
 else
+errorlog = "Fail ( Group has owner or group is locked )"; UpdateHint()
 return false
 end
 elseif zx == 4 then
 if group and not group.code and group.memberCount and group.memberCount == 0 and group.publicEntryAllowed and group.publicEntryAllowed == true then
+errorlog = "Success"; UpdateHint()
 return "https://www.roblox.com/communities/"..id..""
 else
+errorlog = "Fail ( Group has more than 0 players or group is locked )"; UpdateHint()
 return false
 end
 elseif zx == 5 then
 if group and not group.code and group.memberCount and group.memberCount == 0 and group.publicEntryAllowed and group.publicEntryAllowed == true and group.owner and group.owner == nil then
+errorlog = "Success"; UpdateHint()
 return "https://www.roblox.com/communities/"..id..""
 else
+errorlog = "Fail ( Group has more than 0 players or has owner or group is locked )"; UpdateHint()
 return false
 end
 end
@@ -297,5 +311,10 @@ if HINT then
 HINT:Destroy()
 end
 end
+
+
+
+
+
 
 return ModScr
