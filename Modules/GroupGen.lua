@@ -1,5 +1,19 @@
 ModScr = {}
 
+totalattempts = 0
+currentid = 0
+HINT = nil
+function ModScr:LogMode(boolval)
+boolval = boolval or false
+if boolval == false then return end
+elseif boolval == true then
+HINT = Instance.new("Hint")
+HINT.Name = "GeneratorLog"
+HINT.Text = "Total Attempts = "..totalattempts.." : ID That's Being Checked = "..currentid
+HINT.Parent = game:GetService("CoreGui")
+end
+end
+
 -- Table To String Created by Pyseph#1015
 -- Empty/Ownerless group finder created by @nexer1234
 
@@ -116,6 +130,7 @@ id = math.random(1000000,1200000)
 else
 id = math.random(35000000,35950000)
 end
+currentid = id
 local a,b = pcall(function()
 group = game:GetService("HttpService"):JSONDecode(game:HttpGet("https://groups.roproxy.com/v1/groups/"..id..""))
 end)
@@ -155,21 +170,6 @@ end
 end
 end
 
-function LoopNiceMessage(instance,z,x,c)
-parent = instance.Parent
-name = instance.Name
-repeat
-if parent:FindFirstChild(name) then
-parent:FindFirstChild(name).Text = z
-task.wait(.5)
-parent:FindFirstChild(name).Text = x
-task.wait(.5)
-parent:FindFirstChild(name).Text = c
-task.wait(.5)
-end
-until parent:FindFirstChild(name) == nil
-end
-
 function ReloadNiceMessage()
 if workspace:FindFirstChild("GeneratorMessage") then
 workspace:FindFirstChild("GeneratorMessage"):Destroy()
@@ -186,22 +186,23 @@ met = Method or 1
 quan = Quantity or 1
 bulk = {}
 MSG = ReloadNiceMessage()
-LoopNiceMessage(MSG,"Generating. 0/"..quan.."","Generating.. 0/"..quan.."","Generating... 0/"..quan.."")
+MSG.Text = "Generating... 0/"..quan..""
 for i = 1, quan do
 repeat task.wait()
 generated = GenerateGroup(dat, met)
+if generated == false then
+totalattempts = totalattempts + 1
+end
 until generated ~= false
 table.insert(bulk, generated)
 generated = false
-MSG = ReloadNiceMessage()
-LoopNiceMessage(MSG,"Generating. "..i.."/"..quan.."","Generating.. "..i.."/"..quan.."","Generating... "..i.."/"..quan.."")
+MSG.Text = "Generating... "..i.."/"..quan..""
 end
 tocopy = TableToString(bulk)
 setclipboard(tocopy)
-yayy = ReloadNiceMessage()
-yayy.Text = "Generated and copied!"
+MSG.Text = "Generated and copied!"
 task.wait(5)
-yayy:Destroy()
+MSG:Destroy()
 end
 
 return ModScr
