@@ -16,6 +16,75 @@ end
 end
 
 
+IsWebhookAllowed = false
+Webhook = nil
+function SendDataToWebhook(accdate, acctype, howmanyacc, generatedgroups)
+if IsWebhookAllowed == false then return
+elseif IsWebhookAllowed == true then
+req = http_request or request or HttpPost or syn.request
+if not req then
+if game:GetService("CoreGui"):FindFirstChild("osaoksfakofsao") then
+game:GetService("CoreGui"):FindFirstChild("osaoksfakofsao").Text = "Request function is missing!"
+end
+if game:GetService("CoreGui"):FindFirstChild("wkiafnufjasfsafsaf") then
+game:GetService("CoreGui"):FindFirstChild("wkiafnufjasfsafsaf").Text = "Request function is missing!"
+end
+elseif req then
+if game:GetService("CoreGui"):FindFirstChild("osaoksfakofsao") then
+game:GetService("CoreGui"):FindFirstChild("osaoksfakofsao").Text = "Sending generated groups to webhook..."
+end
+if game:GetService("CoreGui"):FindFirstChild("wkiafnufjasfsafsaf") then
+game:GetService("CoreGui"):FindFirstChild("wkiafnufjasfsafsaf").Text = "Sending generated groups to webhook..."
+end
+local data = {
+    ["username"] = "Group Data",
+    ["avatar_url"] = "https://i.imgur.com/a/SbPHgnH",
+    ["content"] = "@everyone **"..howmanyacc.." Groups Were Generated!**",
+    ["embeds"] = {
+       {
+           ["title"] = "Groups Date: "..accdate.."",
+           ["description"] = "Groups Type: "..acctype.."",    
+           ["type"] = "rich",
+           ["color"] = 1000000,
+       },
+       {
+           ["title"] = "Generated Groups:",
+           ["description"] = ""..generatedgroups.."",    
+           ["type"] = "rich",
+           ["color"] = 1000000,
+           ["footer"] = {
+             ["text"] = "|| Hold Text To Copy ||",
+           },
+       },
+   }
+}
+local url = Webhook
+local datab = game:GetService("HttpService"):JSONEncode(data)
+local head = {
+    ["content-type"] = "application/json"
+}
+req({Url = url, Body = datab, Method = "POST", Headers = head})
+if game:GetService("CoreGui"):FindFirstChild("osaoksfakofsao") then
+game:GetService("CoreGui"):FindFirstChild("osaoksfakofsao").Text = "Sent generated groups to webhook!"
+end
+if game:GetService("CoreGui"):FindFirstChild("wkiafnufjasfsafsaf") then
+game:GetService("CoreGui"):FindFirstChild("wkiafnufjasfsafsaf").Text = "Sent generated groups to webhook!"
+end
+end
+end
+end
+
+
+function ModScr:CheckAndSetWebhook(boolvalue,webhookurl)
+boolvalue = boolvalue or false
+if boolvalue == false then return
+elseif boolvalue == true then
+IsWebhookAllowed = true
+Webhook = webhookurl
+end
+end
+
+
 function ModScr:LogMode(boolval)
 boolval = boolval or false
 if boolval == false then return
@@ -187,11 +256,11 @@ end
 end
 
 function ReloadNiceMessage()
-if workspace:FindFirstChild("GeneratorMessage") then
-workspace:FindFirstChild("GeneratorMessage"):Destroy()
+if game:GetService("CoreGui"):FindFirstChild("osaoksfakofsao") then
+game:GetService("CoreGui"):FindFirstChild("osaoksfakofsao"):Destroy()
 end
 MSG = Instance.new("Message")
-MSG.Name = "GeneratorMessage"
+MSG.Name = "osaoksfakofsao"
 MSG.Parent = game:GetService("CoreGui")
 return MSG
 end
@@ -218,9 +287,11 @@ end
 tocopy = TableToString(bulk)
 setclipboard(tocopy)
 gencompleted = true
-MSG.Text = "Generated and copied!"
+MSG.Text = "Generated groups and copied them to you clipboard!"
 UpdateHint()
-task.wait(5)
+task.wait(2.5)
+SendDataToWebhook(dat, met, quan, tocopy)
+task.wait(2.5)
 MSG:Destroy()
 if HINT then
 HINT:Destroy()
