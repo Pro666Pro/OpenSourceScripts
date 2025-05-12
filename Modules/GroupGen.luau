@@ -8,9 +8,9 @@ HINT = nil
 function UpdateHint()
 if game:GetService("CoreGui"):FindFirstChild("wkiafnufjasfsafsaf") then
 if gencompleted == true then
-game:GetService("CoreGui"):FindFirstChild("wkiafnufjasfsafsaf").Text = "Generation is completed!"
+game:GetService("CoreGui"):FindFirstChild("wkiafnufjasfsafsaf").Text = "Generation is completed! Total Attempts = "..totalattempts
 else
-game:GetService("CoreGui"):FindFirstChild("wkiafnufjasfsafsaf").Text = "Total Attempts = "..totalattempts.." : ID That's Being Checked = "..currentid
+game:GetService("CoreGui"):FindFirstChild("wkiafnufjasfsafsaf").Text = "Total Attempts = "..totalattempts.." : Checking Group ID = "..currentid
 end
 end
 end
@@ -219,6 +219,7 @@ tocopy = TableToString(bulk)
 setclipboard(tocopy)
 gencompleted = true
 MSG.Text = "Generated and copied!"
+UpdateHint()
 task.wait(5)
 MSG:Destroy()
 if HINT then
