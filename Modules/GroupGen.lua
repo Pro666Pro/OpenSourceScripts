@@ -159,7 +159,7 @@ function LoopNiceMessage(instance,z,x,c)
 parent = instance.Parent
 name = instance.Name
 repeat
-if parent:FindFirstChild(name) them
+if parent:FindFirstChild(name) then
 parent:FindFirstChild(name).Text = z
 task.wait(.5)
 parent:FindFirstChild(name).Text = x
