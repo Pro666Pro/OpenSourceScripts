@@ -1,6 +1,6 @@
 Ezz = Instance.new("Message")
 Ezz.Name = "sffsfsfsfsfsfs"
-Ezz.Text = "Thanks For Using!"
+Ezz.Text = "Version 2.4"
 Ezz.Parent = game:GetService("CoreGui")
 task.wait(1)
 Ezz:Destroy()
