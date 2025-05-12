@@ -305,6 +305,10 @@ table.insert(bulk, generated)
 generated = false
 MSG.Text = "Generating... "..i.."/"..quan..""
 if quan == tonumber(9e9) then
+tocopy = TableToString(bulk)
+setclipboard(tocopy)
+MSG.Text = "Generated group and copied them to you clipboard!"
+task.wait(1)
 SendDataToWebhook(dat, met, quan, tocopy)
 task.wait(1)
 end
