@@ -1,6 +1,6 @@
 Ezz = Instance.new("Message")
 Ezz.Name = "sffsfsfsfsfsfs"
-Ezz.Text = "Version 3.1 ( You can downgrade using github )"
+Ezz.Text = "Version 3.2 ( You can downgrade using github )"
 Ezz.Parent = game:GetService("CoreGui")
 task.wait(1)
 Ezz:Destroy()
@@ -234,7 +234,7 @@ errorlog = "Fail ( Can't Decode Group Data )"; UpdateHint()
 return false
 end
 if zx == 1 then
-if group and not group.code and group.memberCount == 0 then
+if group and not group.code and not group.errors and group.memberCount == 0 then
 errorlog = "Success"; UpdateHint()
 return "https://www.roblox.com/communities/"..id..""
 else
@@ -242,7 +242,7 @@ errorlog = "Fail ( Group Have Members )"; UpdateHint()
 return false
 end
 elseif zx == 2 then
-if group and not group.code and group.owner == null or group.owner == nil then
+if group and not group.code and not group.errors and group.owner == null or group.owner == nil then
 errorlog = "Success"; UpdateHint()
 return "https://www.roblox.com/communities/"..id..""
 else
@@ -250,7 +250,7 @@ errorlog = "Fail ( Group Have Owner )"; UpdateHint()
 return false
 end
 elseif zx == 3 then
-if group and not group.code and group.owner == null or group.owner == nil and group.publicEntryAllowed == true then
+if group and not group.code and not group.errors and group.owner == null or group.owner == nil and group.publicEntryAllowed == true then
 errorlog = "Success"; UpdateHint()
 return "https://www.roblox.com/communities/"..id..""
 else
@@ -258,7 +258,7 @@ errorlog = "Fail ( Group Either Have Owner or Locked )"; UpdateHint()
 return false
 end
 elseif zx == 4 then
-if group and not group.code and group.memberCount == 0 and group.publicEntryAllowed == true then
+if group and not group.code and not group.errors and group.memberCount == 0 and group.publicEntryAllowed == true then
 errorlog = "Success"; UpdateHint()
 return "https://www.roblox.com/communities/"..id..""
 else
@@ -266,7 +266,7 @@ errorlog = "Fail ( Group Either Have Members or Locked )"; UpdateHint()
 return false
 end
 elseif zx == 5 then
-if group and not group.code and group.memberCount == 0 and group.publicEntryAllowed == true and group.owner == null or group.owner == nil then
+if group and not group.code and not group.errors and group.memberCount == 0 and group.publicEntryAllowed == true and group.owner == null or group.owner == nil then
 errorlog = "Success"; UpdateHint()
 return "https://www.roblox.com/communities/"..id..""
 else
