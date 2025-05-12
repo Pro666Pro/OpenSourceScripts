@@ -6,11 +6,11 @@ gencompleted = false
 HINT = nil
 
 function UpdateHint()
-if game:GetService("CoreGui"):FindFirstChild("GeneratorLog") then
+if game:GetService("CoreGui"):FindFirstChild("wkiafnufjasfsafsaf") then
 if gencompleted == true then
-game:GetService("CoreGui"):FindFirstChild("GeneratorLog").Text = "Generation is completed!"
+game:GetService("CoreGui"):FindFirstChild("wkiafnufjasfsafsaf").Text = "Generation is completed!"
 else
-game:GetService("CoreGui"):FindFirstChild("GeneratorLog").Text = "Total Attempts = "..totalattempts.." : ID That's Being Checked = "..currentid
+game:GetService("CoreGui"):FindFirstChild("wkiafnufjasfsafsaf").Text = "Total Attempts = "..totalattempts.." : ID That's Being Checked = "..currentid
 end
 end
 end
@@ -21,10 +21,10 @@ boolval = boolval or false
 if boolval == false then return
 elseif boolval == true then
 HINT = Instance.new("Hint")
-HINT.Name = "GeneratorLog"
+HINT.Name = "wkiafnufjasfsafsaf"
 HINT.Text = "Loading"
 HINT.Parent = game:GetService("CoreGui")
-repeat task.wait() until game:GetService("CoreGui"):FindFirstChild("GeneratorLog")
+task.wait()
 UpdateHint()
 end
 end
