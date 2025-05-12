@@ -4,6 +4,18 @@ totalattempts = 0
 currentid = 0
 gencompleted = false
 HINT = nil
+
+function UpdateHint()
+if game:GetService("CoreGui"):FindFirstChild("GeneratorLog") then
+if gencompleted == true then
+game:GetService("CoreGui"):FindFirstChild("GeneratorLog").Text = "Generation is completed!"
+else
+game:GetService("CoreGui"):FindFirstChild("GeneratorLog").Text = "Total Attempts = "..totalattempts.." : ID That's Being Checked = "..currentid
+end
+end
+end
+
+
 function ModScr:LogMode(boolval)
 boolval = boolval or false
 if boolval == false then return
@@ -12,17 +24,8 @@ HINT = Instance.new("Hint")
 HINT.Name = "GeneratorLog"
 HINT.Text = "Loading"
 HINT.Parent = game:GetService("CoreGui")
-task.delay(0.005, function()
-repeat task.wait()
-if game:GetService("CoreGui"):FindFirstChild("GeneratorLog") then
-if gencompleted == true then
-game:GetService("CoreGui"):FindFirstChild("GeneratorLog").Text = "Generation is completed!"
-else
-game:GetService("CoreGui"):FindFirstChild("GeneratorLog").Text = "Total Attempts = "..totalattempts.." : ID That's Being Checked = "..currentid
-end
-end
-until game:GetService("CoreGui"):FindFirstChild("GeneratorLog") == nil
-end)
+repeat task.wait() until game:GetService("CoreGui"):FindFirstChild("GeneratorLog")
+UpdateHint()
 end
 end
 
@@ -143,6 +146,7 @@ else
 id = math.random(35000000,35950000)
 end
 currentid = id
+UpdateHint()
 local a,b = pcall(function()
 group = game:GetService("HttpService"):JSONDecode(game:HttpGet("https://groups.roproxy.com/v1/groups/"..id..""))
 end)
@@ -204,6 +208,7 @@ repeat task.wait()
 generated = GenerateGroup(dat, met)
 if generated == false then
 totalattempts = totalattempts + 1
+UpdateHint()
 end
 until generated ~= false
 table.insert(bulk, generated)
