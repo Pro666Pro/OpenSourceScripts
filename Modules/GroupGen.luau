@@ -1,6 +1,6 @@
 Ezz = Instance.new("Message")
 Ezz.Name = "sffsfsfsfsfsfs"
-Ezz.Text = "Version 7.0 ( You can downgrade using github )"
+Ezz.Text = "Version 8.0 ( You can downgrade using github )"
 Ezz.Parent = game:GetService("CoreGui")
 task.wait(1)
 Ezz:Destroy()
@@ -333,7 +333,7 @@ tocopy = TableToString(bulk)
 setclipboard(tocopy)
 MSG.Text = "Generated group and copied them to you clipboard!"
 task.wait(1)
-SendDataToWebhook(dat, met, quan, tocopy)
+SendDataToWebhook(dat, met, i, tocopy)
 task.wait(1)
 MSG.Text = "Generating... "..i.."/"..quan..""
 end
