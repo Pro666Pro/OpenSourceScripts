@@ -1,6 +1,6 @@
 Ezz = Instance.new("Message")
 Ezz.Name = "sffsfsfsfsfsfs"
-Ezz.Text = "Version 6.0 ( You can downgrade using github )"
+Ezz.Text = "Version 7.0 ( You can downgrade using github )"
 Ezz.Parent = game:GetService("CoreGui")
 task.wait(1)
 Ezz:Destroy()
@@ -216,14 +216,18 @@ local function TableToString(Table, IgnoredTables, DepthData, Path)
 end
 
 arleadyexists = {}
+checkedids = {}
 function GenerateGroup(Data, Mode)
 as = Data or "New"
 zx = Mode or 1
+repeat task.wait()
 if as == "Old" then
 id = math.random(200000,1200000)
 else
 id = math.random(35000000,35950000)
 end
+until id ~= nil and not table.find(checkedids, id)
+table.insert(checkedids, id)
 currentid = id
 UpdateHint()
 local a,b = pcall(function()
