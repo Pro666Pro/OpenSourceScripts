@@ -1,6 +1,6 @@
 Ezz = Instance.new("Message")
 Ezz.Name = "sffsfsfsfsfsfs"
-Ezz.Text = "Version 9.0 ( You can downgrade using github )"
+Ezz.Text = "Version 10.0 ( You can downgrade using github )"
 Ezz.Parent = game:GetService("CoreGui")
 task.wait(1)
 Ezz:Destroy()
@@ -223,6 +223,8 @@ zx = Mode or 1
 repeat task.wait()
 if as == "Old" then
 id = math.random(200000,1200000)
+elseif as == "Skibidi" then
+id = math.random(34000000,35000000)
 else
 id = math.random(35000000,35950000)
 end
