@@ -1,6 +1,6 @@
 Ezz = Instance.new("Message")
 Ezz.Name = "sffsfsfsfsfsfs"
-Ezz.Text = "Version 8.0 ( You can downgrade using github )"
+Ezz.Text = "Version 9.0 ( You can downgrade using github )"
 Ezz.Parent = game:GetService("CoreGui")
 task.wait(1)
 Ezz:Destroy()
@@ -234,7 +234,7 @@ local a,b = pcall(function()
 group = game:GetService("HttpService"):JSONDecode(game:HttpGet("https://groups.roproxy.com/v1/groups/"..id.."")) or game:GetService("HttpService"):JSONDecode(game:HttpGet("https://groups.roblox.com/v1/groups/"..id..""))
 end)
 if not a then
-errorlog = "Fail"; UpdateHint()
+errorlog = "Fail [ JSON Decoding Error ]"; UpdateHint()
 return false
 end
 if zx == 1 then
@@ -243,30 +243,30 @@ errorlog = "Success"; UpdateHint()
 table.insert(arleadyexists, group.id)
 return "https://www.roblox.com/communities/"..id..""
 else
-errorlog = "Fail"; UpdateHint()
+errorlog = "Fail [ Not Matched ]"; UpdateHint()
 return false
 end
 elseif zx == 2 then
-if group and not group.code and not group.isLocked and not group.errors and group.owner == null or group.owner == nil and group.id ~= nil and not table.find(arleadyexists, group.id) then
+if group and not group.code and not group.isLocked and group.memberCount ~= nil and group.memberCount >= 1 and not group.errors and group.owner == null or group.owner == nil and group.id ~= nil and not table.find(arleadyexists, group.id) then
 errorlog = "Success"; UpdateHint()
 table.insert(arleadyexists, group.id)
 return "https://www.roblox.com/communities/"..id..""
 else
-errorlog = "Fail"; UpdateHint()
+errorlog = "Fail [ Not Matched ]"; UpdateHint()
 return false
 end
 elseif zx == 3 then
-if group and not group.code and not group.errors and group.owner == null or group.owner == nil and group.publicEntryAllowed and group.publicEntryAllowed == true and group.publicEntryAllowed ~= false and group.id ~= nil and not table.find(arleadyexists, group.id) then
+if group and not group.code and not group.errors and group.memberCount ~= nil and group.memberCount >= 1 and group.owner == null or group.owner == nil and group.publicEntryAllowed and group.publicEntryAllowed == true and group.publicEntryAllowed ~= false and group.id ~= nil and not table.find(arleadyexists, group.id) then
 if group.publicEntryAllowed and group.publicEntryAllowed == true and group.publicEntryAllowed ~= false and not group.isLocked then
 errorlog = "Success"; UpdateHint()
 table.insert(arleadyexists, group.id)
 return "https://www.roblox.com/communities/"..id..""
 else
-errorlog = "Fail"; UpdateHint()
+errorlog = "Fail [ Locked ]"; UpdateHint()
 return false
 end
 else
-errorlog = "Fail"; UpdateHint()
+errorlog = "Fail [ Not Matched ]"; UpdateHint()
 return false
 end
 elseif zx == 4 then
@@ -276,11 +276,11 @@ errorlog = "Success"; UpdateHint()
 table.insert(arleadyexists, group.id)
 return "https://www.roblox.com/communities/"..id..""
 else
-errorlog = "Fail"; UpdateHint()
+errorlog = "Fail [ Locked ]"; UpdateHint()
 return false
 end
 else
-errorlog = "Fail"; UpdateHint()
+errorlog = "Fail [ Not Matched ]"; UpdateHint()
 return false
 end
 elseif zx == 5 then
@@ -290,11 +290,11 @@ errorlog = "Success"; UpdateHint()
 table.insert(arleadyexists, group.id)
 return "https://www.roblox.com/communities/"..id..""
 else
-errorlog = "Fail"; UpdateHint()
+errorlog = "Fail [ Locked ]"; UpdateHint()
 return false
 end
 else
-errorlog = "Fail"; UpdateHint()
+errorlog = "Fail [ Not Matched ]"; UpdateHint()
 return false
 end
 end
