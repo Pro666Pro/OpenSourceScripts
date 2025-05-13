@@ -1,6 +1,6 @@
 Ezz = Instance.new("Message")
 Ezz.Name = "sffsfsfsfsfsfs"
-Ezz.Text = "Version 10.0 ( You can downgrade using github )"
+Ezz.Text = "Version 11.0 ( You can downgrade using github )"
 Ezz.Parent = game:GetService("CoreGui")
 task.wait(1)
 Ezz:Destroy()
@@ -249,22 +249,27 @@ errorlog = "Fail [ Not Matched ]"; UpdateHint()
 return false
 end
 elseif zx == 2 then
-if group and not group.code and not group.isLocked and group.memberCount ~= nil and group.memberCount >= 1 and not group.errors and group.owner == null or group.owner == nil and group.id ~= nil and not table.find(arleadyexists, group.id) then
+if group and not group.code and not group.isLocked and not group.errors and group.owner == null or group.owner == nil and group.id ~= nil and not table.find(arleadyexists, group.id) then
+if group.memberCount ~= nil and group.memberCount >= 1 then
 errorlog = "Success"; UpdateHint()
 table.insert(arleadyexists, group.id)
 return "https://www.roblox.com/communities/"..id..""
+else
+errorlog = "Fail [ Don't Have Members ]"; UpdateHint()
+return false
+end
 else
 errorlog = "Fail [ Not Matched ]"; UpdateHint()
 return false
 end
 elseif zx == 3 then
-if group and not group.code and not group.errors and group.memberCount ~= nil and group.memberCount >= 1 and group.owner == null or group.owner == nil and group.publicEntryAllowed and group.publicEntryAllowed == true and group.publicEntryAllowed ~= false and group.id ~= nil and not table.find(arleadyexists, group.id) then
-if group.publicEntryAllowed and group.publicEntryAllowed == true and group.publicEntryAllowed ~= false and not group.isLocked then
+if group and not group.code and not group.errors and group.owner == null or group.owner == nil and group.publicEntryAllowed and group.publicEntryAllowed == true and group.publicEntryAllowed ~= false and group.id ~= nil and not table.find(arleadyexists, group.id) then
+if group.publicEntryAllowed and group.publicEntryAllowed == true and group.publicEntryAllowed ~= false and not group.isLocked and group.memberCount ~= nil and group.memberCount >= 1 then
 errorlog = "Success"; UpdateHint()
 table.insert(arleadyexists, group.id)
 return "https://www.roblox.com/communities/"..id..""
 else
-errorlog = "Fail [ Locked ]"; UpdateHint()
+errorlog = "Fail [ Locked | Don't Have Members ]"; UpdateHint()
 return false
 end
 else
