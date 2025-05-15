@@ -1,3 +1,13 @@
+b = Instance.new("Hint")
+b.Text = "Support Gui Is Disabled. Cuz too much offtop and webhooks always get nuked"
+b.Name = "HintGui"
+b.Parent = game:GetService("CoreGui")
+task.wait(5)
+pcall(function()
+b:Destroy()
+end)
+return
+
 pcall(function()
 local a = Instance.new("Hint")
 a.Text = "Support Gui Loading..."
