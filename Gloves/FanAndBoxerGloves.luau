@@ -6,15 +6,10 @@ end
 game:GetService("StarterGui"):SetCore("SendNotification",{
 	Title = "Credits to Nexer1234_AnotherAlt",
 	Text = "Made by @nexer1234 ( youtube & discord )",
-    Icon = "rbxassetid://125704683916878",
-	Duration = 36000
+        Icon = "rbxassetid://125704683916878",
+	Duration = 36000,
+	Button1 = "Thanks!"
 })
-
-if getgenv().AutoGetFanAndBoxerExecuted == true then return end
-
-if getgenv or getgenv() then
-getgenv().AutoGetFanAndBoxerExecuted = true
-end
 
 game:GetService("StarterGui"):SetCore("SendNotification",{
 	Title = "Message from Nexer1234_AnotherAlt",
@@ -28,21 +23,21 @@ game:GetService("StarterGui"):SetCore("SendNotification",{
 if game.PlaceId == 7234087065 then
 
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.QuestStuff.Key.CFrame
-task.wait(.8)
+task.wait(1.5)
 game:GetService("ReplicatedStorage").RemoteEvents.SuitUpClown:FireServer()
-task.wait(.1)
+task.wait(.25)
 game:GetService("ReplicatedStorage").RemoteEvents.KeyQuest:FireServer()
-task.wait(.1)
+task.wait(.25)
 game:GetService("ReplicatedStorage").RemoteEvents.KeyAcquired:FireServer()
-task.wait(.1)
+task.wait(.25)
 game:GetService("ReplicatedStorage").RemoteEvents.GOHOME:FireServer()
-task.wait(.1)
+task.wait(.25)
 game:GetService("ReplicatedStorage").RemoteEvents.KeyBadgeReward:FireServer()
-task.wait(.9)
+task.wait(1.5)
 if workspace:FindFirstChild("BoxingGloves") == nil then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Buildings.house.TP.CFrame * CFrame.new(0,10,0)
 repeat task.wait(.1) until workspace:FindFirstChild("BoxingGloves")
-task.wait(.5)
+task.wait(1.5)
 fireclickdetector(workspace.BoxingGloves.ClickDetector)
 else
 fireclickdetector(workspace.BoxingGloves.ClickDetector)
