@@ -6,15 +6,10 @@ end
 game:GetService("StarterGui"):SetCore("SendNotification",{
 	Title = "Credits to Nexer1234_AnotherAlt",
 	Text = "Made by @nexer1234 ( youtube & discord )",
-    Icon = "rbxassetid://125704683916878",
-	Duration = 36000
+        Icon = "rbxassetid://125704683916878",
+	Duration = 36000,
+	Button1 = "Thanks!"
 })
-
-if getgenv().AutoGetFrostbiteExecuted == true then return end
-
-if getgenv or getgenv() then
-getgenv().AutoGetFrostbiteExecuted = true
-end
 
 game:GetService("StarterGui"):SetCore("SendNotification",{
 	Title = "Message from Nexer1234_AnotherAlt",
@@ -37,8 +32,8 @@ end
 if v.RequiresLineOfSight ~= false then
 v.RequiresLineOfSight = false
 end
-if v.MaxActivationDistance ~= math.huge then
-v.MaxActivationDistance = math.huge
+if v.MaxActivationDistance ~= 9e9 then
+v.MaxActivationDistance = 9e9
 end
 v.Enabled = true
 fireproximityprompt(v)
