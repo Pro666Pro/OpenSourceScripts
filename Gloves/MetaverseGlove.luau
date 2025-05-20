@@ -72,7 +72,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.ComputerC
 task.wait(5)
 local start = tick()
 while tick() - start < 30 do  -- copy paste it into your script i dare you
-for i,v in ipairs(game.Players.LocalPlayer.PlayerGui.RealComputerScreenGui.ComputerScreen.SuggestionsQTE:GetChildren()) do
+for i,v in pairs(game.Players.LocalPlayer.PlayerGui.RealComputerScreenGui.ComputerScreen.SuggestionsQTE:GetChildren()) do
 if v and v.Name:find("Popup_") then
 v.Position = game.Players.LocalPlayer.PlayerGui.RealComputerScreenGui.ComputerScreen.SuggestionsQTE.RecyclingBin.Position
 end
@@ -81,11 +81,11 @@ task.wait()
 end
 task.wait(2)
 game:GetService("ReplicatedStorage").Remotes.ComputerState:FireServer("Victory")
-task.wait(1)
+task.wait(.25)
 game:GetService("ReplicatedStorage").Remotes.ComputerState:Destroy()
 game.Players.LocalPlayer.PlayerGui.RealComputerScreenGui.Enabled = false
-game.Players.LocalPlayer.Character.Humanoid.Sit = false  -- copy paste it into your script i dare you
-task.wait(1)
+game.Players.LocalPlayer.Character.Humanoid.Sit = false
+task.wait(1.5)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-14,37,49)
 task.wait(2)
 repeat task.wait()
