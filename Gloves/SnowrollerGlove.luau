@@ -7,15 +7,10 @@ end
 game:GetService("StarterGui"):SetCore("SendNotification",{
 	Title = "Credits to Nexer1234_AnotherAlt",
 	Text = "Made by @nexer1234 ( youtube & discord )",
-    Icon = "rbxassetid://125704683916878",
-	Duration = 36000
+        Icon = "rbxassetid://125704683916878",
+	Duration = 36000,
+	Button1 = "Thanks!"
 })
-
-if getgenv().AutoGetSnowrollerExecuted == true then return end
-
-if getgenv or getgenv() then
-getgenv().AutoGetSnowrollerExecuted = true
-end
 
 game:GetService("StarterGui"):SetCore("SendNotification",{
 	Title = "Message from Nexer1234_AnotherAlt",
