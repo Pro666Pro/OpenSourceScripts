@@ -27,12 +27,16 @@ if workspace.Game.Buildings.City:FindFirstChild("City") == nil then
 game:GetService("ReplicatedStorage").Remotes.PlaceBuilding:FireServer("City", Vector3.new(3.125, 43.4450798034668, -57.1875), 0)
 end
 
-while task.wait() do
-if workspace.Game.Enemies:FindFirstChild("Rat") and workspace.Game.Enemies.Rat:FindFirstChildWhichIsA("Humanoid") then
-if workspace.Game.Enemies.Rat.Humanoid.Health ~= 0 then
-workspace.Game.Enemies.Rat.Humanoid.Health = 0 -- I tested and this method is faster than firing remotes
+while task.wait(.003) do
+
+for i,v in pairs(workspace.Game.Enemies:GetChildren()) do
+if v.Name == "Rat" and v:FindFirstChild("Hitbox") and v:FindFirstChildWhichIsA("Humanoid") and v:FindFirstChildWhichIsA("Humanoid").Health ~= 0 then
+v.Hitbox.Anchored = true
+game:GetService("ReplicatedStorage").Remotes.GloveHit:FireServer(v.Hitbox)
+v:FindFirstChildWhichIsA("Humanoid").Health = 0
 end
 end
+
 -- If we get 3000 orbs it will automatically win
 game:GetService("ReplicatedStorage").Remotes.UnlockGloveWithOrbs:FireServer()
 end
