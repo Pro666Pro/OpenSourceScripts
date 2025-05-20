@@ -6,15 +6,10 @@ end
 game:GetService("StarterGui"):SetCore("SendNotification",{
 	Title = "Credits to Nexer1234_AnotherAlt",
 	Text = "Made by @nexer1234 ( youtube & discord )",
-    Icon = "rbxassetid://125704683916878",
-	Duration = 36000
+        Icon = "rbxassetid://125704683916878",
+	Duration = 36000,
+	Button1 = "Thanks!"
 })
-
-if getgenv().AutoGetHexaExecuted == true then return end
-
-if getgenv or getgenv() then
-getgenv().AutoGetHexaExecuted = true
-end
 
 game:GetService("StarterGui"):SetCore("SendNotification",{
 	Title = "Message from Nexer1234_AnotherAlt",
@@ -29,26 +24,32 @@ if game.PlaceId == 98726100529621 then
 
 repeat task.wait(.2) until workspace:FindFirstChild("Part I") and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
 task.wait(5)
+workspace["Part I"].Obby["end"].CanCollide = false
+workspace["Part I"].Obby["end"].CanTouch = true
 workspace["Part I"].Obby["end"].CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 repeat task.wait(.2) until workspace:FindFirstChild("Part 2") and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
 task.wait(5) -- waiting some time cuz script may break
 workspace["Part 2"]["Adjacent Island"].PortalActivator.CanCollide = false
+workspace["Part 2"]["Adjacent Island"].PortalActivator.CanTouch = true
 workspace["Part 2"]["Adjacent Island"].PortalActivator.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 repeat task.wait(.1) until workspace["Part 2"]:FindFirstChild("Portal")
 workspace["Part 2"].Portal.CanCollide = false
+workspace["Part 2"].Portal.CanTouch = true
 workspace["Part 2"].Portal.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 repeat task.wait(.2) until workspace:FindFirstChild("Part 3") and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
 task.wait(5)
-fireclickdetector(workspace["Part 3"].TpToNext.HitBox.Click)
+fireclickdetector(workspace["Part 3"].TpToNext.HitBox:FindFirstChildWhichIsA("ClickDetector"))
 repeat task.wait(.2) until workspace:FindFirstChild("Part 4") and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
 task.wait(5)
+workspace["Part 4"].TPPart.CanCollide = false
+workspace["Part 4"].TPPart.CanTouch = true
 workspace["Part 4"].TPPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 repeat task.wait(.2) until workspace:FindFirstChild("Part 5") and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
 task.wait(5)
-fireclickdetector(workspace["Part 5"].Glove.Hitbox.Click)
+fireclickdetector(workspace["Part 5"].Glove.Hitbox:FindFirstChildWhichIsA("ClickDetector"))
 repeat task.wait(.2) until workspace:FindFirstChild("Finale") and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
 task.wait(5)
-fireclickdetector(workspace.Finale.Reward.Hitbox.Click)
+fireclickdetector(workspace.Finale.Reward.Hitbox:FindFirstChildWhichIsA("ClickDetector"))
 
 elseif game.PlaceId == 11520107397 or game.PlaceId == 9015014224 or game.PlaceId == 6403373529 or game.PlaceId == 124596094333302 then
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
