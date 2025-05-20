@@ -32,15 +32,10 @@ end
 game:GetService("StarterGui"):SetCore("SendNotification",{
 	Title = "Credits to Nexer1234_AnotherAlt",
 	Text = "Made by @nexer1234 ( youtube & discord )",
-    Icon = "rbxassetid://125704683916878",
-	Duration = 36000
+        Icon = "rbxassetid://125704683916878",
+	Duration = 36000,
+	Button1 = "Thanks!"
 })
-
-if getgenv().AutoGetReludeExecuted == true then return end
-
-if getgenv or getgenv() then
-getgenv().AutoGetReludeExecuted = true
-end
 
 game:GetService("StarterGui"):SetCore("SendNotification",{
 	Title = "Message from Nexer1234_AnotherAlt",
@@ -54,7 +49,7 @@ game:GetService("StarterGui"):SetCore("SendNotification",{
 if game.PlaceId == 18550498098 then
 
 Checkamogus()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3258, -65, 824)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3258, -62, 824)
 if not game.IsLoaded then
 game.Loaded:Wait()
 end
@@ -63,6 +58,10 @@ for i,v in pairs(workspace:GetDescendants()) do
 if v.Name == "ShackLever" and v:FindFirstChildWhichIsA("ClickDetector") then
 fireclickdetector(v:FindFirstChildWhichIsA("ClickDetector"))
 end
+end
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3258, -62, 824)
+if not game.IsLoaded then
+game.Loaded:Wait()
 end
 repeat task.wait(.1) until workspace.Map.Components:FindFirstChild("GuideNPC")
 task.wait(.8)
