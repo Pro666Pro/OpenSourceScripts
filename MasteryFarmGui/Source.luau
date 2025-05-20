@@ -1,24 +1,4 @@
 --[[
-
-   _____                   __                            ___________                            ________      .__ 
-  /     \ _____    _______/  |_  ___________ ___.__.     \_   _____/____ _______  _____        /  _____/ __ __|__|
- /  \ /  \\__  \  /  ___/\   __\/ __ \_  __ <   |  |      |    __) \__  \\_  __ \/     \      /   \  ___|  |  \  |
-/    Y    \/ __ \_\___ \  |  | \  ___/|  | \/\___  |      |     \   / __ \|  | \/  Y Y  \     \    \_\  \  |  /  |
-\____|__  (____  /____  > |__|  \___  >__|   / ____|      \___  /  (____  /__|  |__|_|  /      \______  /____/|__|
-        \/     \/     \/            \/       \/               \/        \/            \/              \/          
-
-
-
-
-___.                                                  ____________  ________     _____    
-\_ |__ ___.__.        ____   ____ ___  ___ __________/_   \_____  \ \_____  \   /  |  |   
- | __ <   |  |       /    \_/ __ \\  \/  // __ \_  __ \   |/  ____/   _(__  <  /   |  |_  
- | \_\ \___  |      |   |  \  ___/ >    <\  ___/|  | \/   /       \  /       \/    ^   /  
- |___  / ____|      |___|  /\___  >__/\_ \\___  >__|  |___\_______ \/______  /\____   |   
-     \/\/                \/     \/      \/    \/                  \/       \/      |__| 
-
-
-
 Mastery Farm Gui.
 
 Owned by Nexer1234.
@@ -43,8 +23,8 @@ Global variables ( and some functions ).
 ]]--
 _G.IsUserPremium = false -- This is responsible for whether the user has a premium or not, don't change it bucko 🤠
 _G.IsUserFollowed = false -- This is responsible for whether the user is followed me or not, don't change it too
-EnterPortal = function(a,b) a = a or "Teleport1"; b = b or 0.6; pcall(function() NEX:EnterPortal(a,b) end) end
-EquipGlove = function(a,b) a = a or "Default"; b = b or 0.4; pcall(function() NEX:EquipGlove(a,b) end) end
+EnterPortal = function(a,b) a = a or "Teleport1"; b = b or 0.6; NEX:EnterPortal(a,b) end
+EquipGlove = function(a,b) a = a or "Default"; b = b or 0.4; NEX:EquipGlove(a,b) end
 
 game = game or Ugc -- game itself
 --[[
@@ -61,11 +41,6 @@ end
 end
 end
 
-function FakeMastery(GloveName)
-hookfunction(require(game.ReplicatedFirst.Dependencies.GloveMasteryClient).IsMasteredVersionEnabled, function(self, glove)
-    return glove == GloveName
-end)
-end
 
 --[[
 Loading module-script. This is absolutely required, or else script will fcking explode! ( script won't work )
@@ -116,6 +91,24 @@ HintGui.Text = "Mastery Farm Gui Loading... ( Loading Anti-Cheat Bypass )"
 pcall(function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/BypassAntiCheat/main/main.lua'))()
 end)
+
+
+-- notification function
+function Notify(title, content, time, mode)
+time = time or 10
+mode = mode or false
+if mode == true then
+img = "rbxassetid://136186846844342"
+elseif mode == false then
+img = "rbxassetid://71508738660632"
+end
+OrionLib:MakeNotification({
+	Name = title,
+	Content = content,
+	Image = img,
+	Time = time
+})
+end
 
 -- turn table to string. nexer edition 😎 ( ttostring --> tabletostring )
 function ttostring(tbl)
@@ -345,6 +338,7 @@ local HWID = game:GetService("RbxAnalyticsService"):GetClientId()
 _G.Premium = _G.IsUserPremium
 for i,v in pairs(HWIDList) do
   if v == HWID or game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId,1095975745) then
+Notify("Whitelisted!", "Thanks For Supporting!", 10, true)
       _G.IsUserPremium = true
       _G.Premium = _G.IsUserPremium
 break
@@ -3769,7 +3763,7 @@ MasteryGamepass:AddButton({
 	Name = "Buy Mastery Helper",
 	Callback = function()
 
-if _G.Premium == true or game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId,1095975745) then
+if game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId,1095975745) then
     OrionLib:MakeNotification({Name = "Error",Content = "Arleady Own Gamepass!",Image = "rbxthumb://type=Asset&id=119832194558748&w=150&h=150",Time = 5})
 else
     setclipboard(tostring("https://www.roblox.com/game-pass/1095975745"))
