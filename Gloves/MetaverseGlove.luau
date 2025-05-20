@@ -6,15 +6,10 @@ end
 game:GetService("StarterGui"):SetCore("SendNotification",{
 	Title = "Credits to Nexer1234_AnotherAlt",
 	Text = "Made by @nexer1234 ( youtube & discord )",
-    Icon = "rbxassetid://125704683916878",
-	Duration = 36000
+        Icon = "rbxassetid://125704683916878",
+	Duration = 36000,
+	Button1 = "Thanks!"
 })
-
-if getgenv().AutoGetMetaverseExecuted == true then return end
-
-if getgenv or getgenv() then
-getgenv().AutoGetMetaverseExecuted = true
-end
 
 game:GetService("StarterGui"):SetCore("SendNotification",{
 	Title = "Message from Nexer1234_AnotherAlt",
@@ -27,6 +22,14 @@ game:GetService("StarterGui"):SetCore("SendNotification",{
 
 
 if game.PlaceId == 136005148166028 then
+
+game:GetService("StarterGui"):SetCore("SendNotification",{
+	Title = "Message from Nexer1234_AnotherAlt",
+	Text = "Please don't move and don't touch anything!",
+    Icon = "rbxassetid://125704683916878",
+	Duration = 36000,
+	Button1 = "Ok i guess."
+})
 
 local Platform = (game.UserInputService.TouchEnabled and not game.UserInputService.MouseEnabled) and "Mobile" or "PC"
 fireclickdetector(workspace.Kitchen.Fridge.HitBox.ClickDetector)
@@ -101,29 +104,20 @@ until game.Players.LocalPlayer.PlayerGui.DavidShrineQTE.DavidShrineQTE.ScoreLabe
 
 elseif game.PlaceId == 7234087065 then
 
-local time = tick()
-while tick() - time < 20 do
-if workspace.Buildings:FindFirstChild("wizard twoer 2") then
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(249, 94, -62820)
-else
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Buildings["wizard twoer"].ORB.CFrame
-end
-if fireproximityprompt then
-fireproximityprompt(workspace.Buildings["wizard twoer"].ORB.ProximityPrompt)
-end
-end 
 
-local PlaceID = 7234087065 -- This is serverhop to small server in brazil
-local v0={};local v1="";local v2=os.date("!*t").hour;local v3=false;local v4=pcall(function() v0=game:GetService("HttpService"):JSONDecode(readfile("SmallServerServerHop-Nexer1234.json"));end);if  not v4 then table.insert(v0,v2);writefile("SmallServerServerHop-Nexer1234.json",game:GetService("HttpService"):JSONEncode(v0));end function TPReturner() local v5;if (v1=="") then v5=game.HttpService:JSONDecode(game:HttpGet("https://games.roblox.com/v1/games/"   .. PlaceID   .. "/servers/Public?sortOrder=Asc&limit=100" ));else v5=game.HttpService:JSONDecode(game:HttpGet("https://games.roblox.com/v1/games/"   .. PlaceID   .. "/servers/Public?sortOrder=Asc&limit=100&cursor="   .. v1 ));end local v6="";if (v5.nextPageCursor and (v5.nextPageCursor~="null") and (v5.nextPageCursor~=nil)) then v1=v5.nextPageCursor;end local v7=0;for v8,v9 in pairs(v5.data) do local v10=true;v6=tostring(v9.id);if (tonumber(v9.maxPlayers)>tonumber(v9.playing)) then for v12,v13 in pairs(v0) do if (v7~=0) then if (v6==tostring(v13)) then v10=false;end elseif (tonumber(v2)~=tonumber(v13)) then local v14=pcall(function() delfile("SmallServerServerHop-Nexer1234.json");v0={};table.insert(v0,v2);end);end v7=v7 + 1 ;end if (v10==true) then table.insert(v0,v6);wait();pcall(function() writefile("SmallServerServerHop-Nexer1234.json",game:GetService("HttpService"):JSONEncode(v0));wait();game:GetService("TeleportService"):TeleportToPlaceInstance(PlaceID,v6,game.Players.LocalPlayer);end);wait(4);end end end end function Teleport() while wait() do pcall(function() TPReturner();if (v1~="") then TPReturner();end end);end end
-task.wait()
-while task.wait() do Teleport() end
+repeat task.wait() game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(250, 95, -62830) until workspace.Buildings:FindFirstChild("wizard twoer 2")
+task.wait(1.5)
+while task.wait() do
+for i,v in pairs(workspace.Buildings["wizard twoer 2"]:GetChildren()) do
+if v.Name == "Model" and v:FindFirstChild("Trigger") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v:FindFirstChild("Trigger").CFrame
+end
+end
+end
   
 elseif game.PlaceId == 11520107397 or game.PlaceId == 9015014224 or game.PlaceId == 6403373529 or game.PlaceId == 124596094333302 then
   
-local PlaceID = 7234087065 -- This is serverhop to small server in brazil
-local v0={};local v1="";local v2=os.date("!*t").hour;local v3=false;local v4=pcall(function() v0=game:GetService("HttpService"):JSONDecode(readfile("SmallServerServerHop-Nexer1234.json"));end);if  not v4 then table.insert(v0,v2);writefile("SmallServerServerHop-Nexer1234.json",game:GetService("HttpService"):JSONEncode(v0));end function TPReturner() local v5;if (v1=="") then v5=game.HttpService:JSONDecode(game:HttpGet("https://games.roblox.com/v1/games/"   .. PlaceID   .. "/servers/Public?sortOrder=Asc&limit=100" ));else v5=game.HttpService:JSONDecode(game:HttpGet("https://games.roblox.com/v1/games/"   .. PlaceID   .. "/servers/Public?sortOrder=Asc&limit=100&cursor="   .. v1 ));end local v6="";if (v5.nextPageCursor and (v5.nextPageCursor~="null") and (v5.nextPageCursor~=nil)) then v1=v5.nextPageCursor;end local v7=0;for v8,v9 in pairs(v5.data) do local v10=true;v6=tostring(v9.id);if (tonumber(v9.maxPlayers)>tonumber(v9.playing)) then for v12,v13 in pairs(v0) do if (v7~=0) then if (v6==tostring(v13)) then v10=false;end elseif (tonumber(v2)~=tonumber(v13)) then local v14=pcall(function() delfile("SmallServerServerHop-Nexer1234.json");v0={};table.insert(v0,v2);end);end v7=v7 + 1 ;end if (v10==true) then table.insert(v0,v6);wait();pcall(function() writefile("SmallServerServerHop-Nexer1234.json",game:GetService("HttpService"):JSONEncode(v0));wait();game:GetService("TeleportService"):TeleportToPlaceInstance(PlaceID,v6,game.Players.LocalPlayer);end);wait(4);end end end end function Teleport() while wait() do pcall(function() TPReturner();if (v1~="") then TPReturner();end end);end end
-task.wait()
-while task.wait() do Teleport() end
+while task.wait() do game:GetService("TeleportService"):Teleport(7234087065) end
 
 else
 game:GetService("StarterGui"):SetCore("SendNotification",{
