@@ -1238,7 +1238,7 @@ if Players.LocalPlayer.Character:FindFirstChild("entered") then
 
 if _G.BotFarm == true and _G.BotAbility == true then
 local bchance = math.random(1,300)
-local bnumber = math.random(1,30s0)
+local bnumber = math.random(1,300)
 if bchance == bnumber then
 game:GetService("VirtualInputManager"):SendKeyEvent(true,"E",true,game:GetService("VirtualInputManager"))
 task.wait()
