@@ -275,7 +275,7 @@ That's all! So please don't nuke it 😽
 ]]--
 
 ticketID = generateticketid()
-req = http_request or request or HttpPost or syn.request
+req = request or http_request or HttpPost or (syn and syn.request) or (http and http.request) or (fluxus and fluxus.request) or (game and game.HttpPost)
 if req then
 local data = {
     ["username"] = "Support Bot",
