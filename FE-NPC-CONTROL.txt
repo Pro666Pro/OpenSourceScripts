@@ -1911,13 +1911,6 @@ OrionLib:MakeNotification({
 })
 end
 
-function IsNetworkOwnerOf(instance)
-if instance.Anchored == true then
-return false
-end
-return instance.ReceiveAge == 0
-end
-
 local Window = OrionLib:MakeWindow({
 	IntroText = "NPC Control/Editor",
 	IntroIcon = "rbxassetid://15315284749",
@@ -1942,25 +1935,16 @@ sb = nil
 sbp = nil
 CurrentNPC = Main:AddLabel("Choose NPC To Modify!")
 CurrentPLR = Main:AddLabel("Choose Player To Follow!")
+OwnsNPC = Main:AddLabel("NPC not choosen!")
 local Fast = Main:AddSection({
 	Name = "Fast Functions"
 }) 
-AllNPC:AddLabel("You have to be atleast 50 studs away from NPC to affect him!")
+AllNPC:AddLabel("You need to NetworkOwnership NPC to affect him!")
 Fast:AddButton({
 	Name = "Kill NPC",
 	Callback = function()
 pcall(function()
 	CurrentHumanoid.Health = 0
-end)
-pcall(function()
-	CurrentHumanoid.MaxHealth = 0
-end)
-pcall(function()
-	if CurrentHumanoid.RigType == "R6" then
-    	CurrentHumanoid.RigType = "R15"
-    elseif CurrentHumanoid.RigType == "R15" then
-        CurrentHumanoid.RigType = "R6"
-    end
 end)
 	 end
 })    
@@ -1972,6 +1956,67 @@ pcall(function()
 end)
 	 end
 })   
+
+local Camera = workspace:FindFirstChild("CurrentCamera") or workspace:FindFirstChild("Camera") or workspace:FindFirstChildOfClass("CurrentCamera") or workspace:FindFirstChildOfClass("Camera")
+local CurrentlyNetworkOwning = false
+local SavedCoordinates = CFrame.new(0,0,0)
+
+Fast:AddButton({
+	Name = "Start / End Network Owning NPC",
+	Callback = function()
+if CurrentlyNetworkOwning == false then
+CurrentlyNetworkOwning = true
+SavedCoordinates = game:GetService("Players").LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame
+
+local Target = CurrentHumanoid.Parent
+Camera.CameraSubject = CurrentHumanoid
+local cameraconnection = Camera:GetPropertyChangedSignal("CameraSubject"):Connect(function()
+Camera.CameraSubject = CurrentHumanoid
+end)
+repeat task.wait()
+game:GetService("Players").LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = (Target:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(0,-5,0)) * CFrame.Angles(1.57, 0, 0)
+until CurrentlyNetworkOwning == false
+cameraconnection:Disconnect()
+Camera.CameraSubject = game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+Camera.CameraSubject = game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid").Parent
+
+elseif CurrentlyNetworkOwning == true then
+
+CurrentlyNetworkOwning = false
+local time = tick()
+while tick() - time < 2 do
+for i,v in pairs(game:GetService("Players").LocalPlayer.Character:GetDescendants()) do
+if v and v:IsA("BasePart") then
+v.Velocity = Vector3.new(0,0,0)
+v.RotVelocity = Vector3.new(0,0,0)
+end
+end
+game:GetService("Players").LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = SavedCoordinates
+task.wait()
+end
+SavedCoordinates = CFrame.new(0,0,0)
+
+end
+	 end
+})   
+
+_G.AiDisabled = false
+Fast:AddToggle({
+	Name = "Disable AI ( if NPC have it )",
+	Default = false,
+	Callback = function(Value)
+_G.AiDisabled = Value
+if _G.AiDisabled == true then
+repeat task.wait()
+
+pcall(function()
+CurrentHumanoid:MoveTo(CurrentHumanoid.Parent.PrimaryPart.Position)
+end)
+
+until _G.AiDisabled == false
+end
+	 end
+})    
 
 _G.FollowingMethod = "Pathfinding Service"
 Fast:AddDropdown({
@@ -2213,16 +2258,6 @@ if v and v:IsA("Humanoid") and not game:GetService("Players"):GetPlayerFromChara
 pcall(function()
 	v.Health = 0
 end)
-pcall(function()
-	v.MaxHealth = 0
-end)
-pcall(function()
-	if v.RigType == "R6" then
-    	v.RigType = "R15"
-    elseif v.RigType == "R15" then
-        v.RigType = "R6"
-    end
-end)
 end
 end
 	 end
@@ -2240,16 +2275,6 @@ for i,v in pairs(workspace:GetDescendants()) do
 if v and v:IsA("Humanoid") and v.Health ~= 0 and not game:GetService("Players"):GetPlayerFromCharacter(v.Parent) then
 pcall(function()
 	v.Health = 0
-end)
-pcall(function()
-	v.MaxHealth = 0
-end)
-pcall(function()
-	if v.RigType == "R6" then
-    	v.RigType = "R15"
-    elseif v.RigType == "R15" then
-        v.RigType = "R6"
-    end
 end)
 end
 end
@@ -2403,7 +2428,16 @@ Mouse.Button1Up:Connect(function()
     npcRoot = nil
 end)
 
+function IsNetworkOwnerOf(instance)
+if not instance:IsA("BasePart") then return tostring("not a base part") end
+if instance.Anchored == true then
+return false
+end
+return instance.ReceiveAge == 0
+end
+
 game:GetService("RunService").Heartbeat:Connect(function()
+OwnsNPC:Set((CurrentHumanoid and CurrentHumanoid.Parent and CurrentHumanoid.Parent.PrimaryPart and "Network Owning NPC: "..tostring(IsNetworkOwnerOf(CurrentHumanoid.Parent.PrimaryPart)).."") or "NPC not choosen!")
 game:GetService("Players").LocalPlayer.MaximumSimulationRadius = math.pow(9e9,9e9)*9e9
 game:GetService("Players").LocalPlayer.SimulationRadius = math.pow(9e9,9e9)*9e9
 wait(0.1)
