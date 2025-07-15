@@ -1,0 +1,32 @@
+Binary = {}
+
+function Binary.encode(text)
+    local result = ""
+    for i = 1, #text do
+        local byte = string.byte(text, i)
+        local bits = ""
+        for j = 7, 0, -1 do
+            bits = bits .. (byte // (2^j) % 2)
+        end
+        result = result .. bits
+    end
+    return result
+end
+
+function Binary.decode(binary)
+    local result = ""
+    for i = 1, #binary, 8 do
+        local byte_str = binary:sub(i, i+7)
+        local byte = 0
+        for j = 0, 7 do
+            local bit = byte_str:sub(j+1, j+1)
+            if bit == "1" then
+                byte = byte + 2^(7-j)
+            end
+        end
+        result = result .. string.char(byte)
+    end
+    return result
+end
+
+return Binary
